@@ -18,7 +18,6 @@ public class UserService {
 
     public void addUser(User user) {
         try {
-            int count = 0;
             String checkEmailQuery = "select count(*) from member where email = ?";
             preparedStatement = this.connection.prepareStatement(checkEmailQuery);
             preparedStatement.setString(1,user.getEmail());

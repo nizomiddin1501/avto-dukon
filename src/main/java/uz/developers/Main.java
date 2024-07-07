@@ -1,10 +1,10 @@
 package uz.developers;
 
 import uz.developers.model.Brand;
+import uz.developers.model.Car;
+import uz.developers.model.Model;
 import uz.developers.model.User;
-import uz.developers.service.BrandService;
-import uz.developers.service.UserService;
-import uz.developers.service.DbConnection;
+import uz.developers.service.*;
 
 import java.util.Scanner;
 
@@ -21,7 +21,7 @@ public class Main {
         boolean islui = true;
 
         while (islui) {
-            System.out.println("0 => Exit, 1 => New User, 2 => New Brand");
+            System.out.println("0 => Exit, 1 => New User, 2 => New Brand, 3 => New Model, 4 => New Car");
             int i = scanner.nextInt();
             switch (i) {
                 case 0:
@@ -48,6 +48,7 @@ public class Main {
 
                     User user = new User(firstname, lastname, email, password, photo, phone_number);
                     databaseService.addUser(user);
+                    break;
                 }
 
                 case 2: {
@@ -56,7 +57,46 @@ public class Main {
                     Brand brand = new Brand(name);
                     BrandService brandService = new BrandService(DbConnection.getConnection());
                     brandService.addBrand(brand);
+                    break;
                 }
+
+                case 3: {
+                    System.out.println("Enter model name");
+                    String name = scanner.next();
+
+                    System.out.println("Enter brand id");
+                    int brand_id = scanner.nextInt();
+                    Model model = new Model(name,brand_id);
+                    ModelService modelService = new ModelService(DbConnection.getConnection());
+                    modelService.addModel(model);
+                    break;
+                }
+
+                case 4: {
+                    CarService carService = new CarService(DbConnection.getConnection());
+                    System.out.println("Enter title");
+                    String title = scanner.next();
+
+                    System.out.println("Enter description");
+                    String description = scanner.next();
+
+                    System.out.println("Enter year");
+                    int year = scanner.nextInt();
+
+                    System.out.println("Enter price");
+                    int price = scanner.nextInt();
+
+                    System.out.println("Enter model id");
+                    int model_id = scanner.nextInt();
+
+                    System.out.println("Enter member ind");
+                    int member_id = scanner.nextInt();
+
+                    Car car = new Car(title,description,year,price,model_id,member_id);
+                    carService.addCar(car);
+                    break;
+                }
+
             }
         }
 
