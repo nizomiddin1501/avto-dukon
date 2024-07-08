@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 @WebServlet("/brandAdd")
 public class BrandServlet extends HttpServlet {
@@ -21,6 +22,11 @@ public class BrandServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+//        BrandService brandService = new BrandService(DbConnection.getConnection());
+//        List<Brand> brands = brandService.getAllBrands();
+//        req.setAttribute("brands",brands);
+//        req.getRequestDispatcher("brandList.jsp").forward(req,resp);
+//
 
     }
 

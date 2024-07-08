@@ -21,11 +21,19 @@ public class Main {
         boolean islui = true;
 
         while (islui) {
-            System.out.println("0 => Exit, 1 => New User, 2 => New Brand, 3 => New Model, 4 => New Car");
+            System.out.println(
+                    "0 => Exit, " +
+                    "1 => New User, " +
+                    "2 => New Brand, " +
+                    "3 => New Model, " +
+                    "4 => New Car, " +
+                    "5 => Brands List");
             int i = scanner.nextInt();
             switch (i) {
-                case 0:
+                case 0: {
                     return;
+                }
+
                 case 1: {
                     UserService databaseService = new UserService(DbConnection.getConnection());
                     System.out.println("Enter firstname");
@@ -96,6 +104,16 @@ public class Main {
                     carService.addCar(car);
                     break;
                 }
+
+                case 5: {
+                    BrandService brandService = new BrandService(DbConnection.getConnection());
+                    System.out.println(brandService.getAllBrands());
+                    break;
+                }
+
+
+
+
 
             }
         }

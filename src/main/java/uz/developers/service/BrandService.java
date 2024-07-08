@@ -7,6 +7,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BrandService {
 
@@ -18,6 +20,27 @@ public class BrandService {
     public BrandService(Connection connection) {
         this.connection = connection;
     }
+
+    public List<Brand> getAllBrands() {
+        List<Brand> brandList = new ArrayList<>();
+        try {
+            String query = "select * from brand";
+            preparedStatement = this.connection.prepareStatement(query);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Brand brand = new Brand();
+                brand.setId(resultSet.getInt(1));
+                brand.setName(resultSet.getString(2));
+                brandList.add(brand);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return brandList;
+    }
+
+
+
 
 
     public void addBrand(Brand brand) {
