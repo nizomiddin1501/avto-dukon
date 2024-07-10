@@ -1,13 +1,13 @@
 <ul class="list-group">
     <li class="list-goup-item">
-        <a>My Profile</a>
+        <a href="https://www.instagram.com/nizomiddin_mirzanazarov/">instagram</a>
     </li>
 
     <li class="list-goup-item">
-        <a>Cart</a>
+        <a href="https://t.me/Abu_Abdulloh_097">telegram</a>
     </li>
 
     <li class="list-goup-item">
-        <a>Login</a>
+        <a href="https://github.com/nizomiddin1501">gitHub</a>
     </li>
 </ul>

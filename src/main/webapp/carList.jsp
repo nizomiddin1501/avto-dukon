@@ -69,11 +69,11 @@
 
                 <tr>
                     <th><%=resultSet.getInt(1)%></th>
-                    <th><%=resultSet.getString("title")%></th>
+                    <th><%=resultSet.getString(2)%></th>
                     <th><%=resultSet.getString(3)%></th>
                     <th><%=resultSet.getString(4)%></th>
                     <th><%=resultSet.getString(5)%></th>
-                    <th><%=resultSet.getString("name")%></th>
+                    <th><%=resultSet.getString(6)%></th>
 
                     <td>
                         <a href="modelShow.jsp?id=<%=resultSet.getInt(1)%>" class="btn btn-success">Show</a>

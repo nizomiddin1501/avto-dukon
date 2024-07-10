@@ -25,18 +25,15 @@ public class ModelService {
     public List<Model> getAllModelList() {
         List<Model> modelList = new ArrayList<>();
         try {
-            String query = "select * from model inner join brand on brand.id = model.brand_id";
+            String query = "select model.id, model.name, brand.name as brand_name from model " +
+                    "inner join brand on brand.id = model.brand_id";
             preparedStatement = this.connection.prepareStatement(query);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                Model model = new Model();
-                Brand brand = new Brand();
-                model.setId(resultSet.getInt(1));
-                model.setName(resultSet.getString(2));
-                model.setBrand_id(resultSet.getInt(3));
-                brand.setName(resultSet.getString(4));
-                modelList.add(model);
-
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String brandName = resultSet.getString("brand_name");
+                modelList.add(new Model(id,name,brandName));
             }
         } catch (Exception e) {
             e.printStackTrace();

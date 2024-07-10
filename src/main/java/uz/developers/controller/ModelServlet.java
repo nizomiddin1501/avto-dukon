@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 @WebServlet("/modelAdd")
 public class ModelServlet extends HttpServlet {
@@ -20,7 +21,10 @@ public class ModelServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        ModelService modelService = new ModelService(DbConnection.getConnection());
+        List<Model> models = modelService.getAllModelList();
+        req.setAttribute("models", models);
+        req.getRequestDispatcher("/modelList.jsp").forward(req, resp);
 
     }
 
@@ -34,7 +38,7 @@ public class ModelServlet extends HttpServlet {
         Model model = new Model(name,brand_id);
         ModelService modelService = new ModelService(DbConnection.getConnection());
         modelService.addModel(model);
-        //resp.sendRedirect("model.jsp");
+        resp.sendRedirect("model.jsp");
         PrintWriter writer = resp.getWriter();
         writer.println("Model added successfully!!!");
 
