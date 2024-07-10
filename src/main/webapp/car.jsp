@@ -2,6 +2,9 @@
 <%@ page import="uz.developers.service.DbConnection" %>
 <%@ page import="java.sql.PreparedStatement" %>
 <%@ page import="java.sql.ResultSet" %>
+<%@ page import="uz.developers.service.ModelService" %>
+<%@ page import="uz.developers.model.Model" %>
+<%@ page import="java.util.List" %>
 <%
     Connection connection = DbConnection.getConnection();
     PreparedStatement preparedStatement;
@@ -58,32 +61,31 @@
                     <label>Model</label>
                     <select name="model_id" class="form-control">
                         <%
-                            query = "select * from model";
-                            preparedStatement = connection.prepareStatement(query);
-                            resultSet = preparedStatement.executeQuery();
-                            while (resultSet.next()) {
+                            ModelService modelService = new ModelService(DbConnection.getConnection());
+                            List<Model> models = modelService.getModels();
+                            for (Model model : models) {
                         %>
-                        <option value="<%=resultSet.getInt("id")%>"><%=resultSet.getString("name")%>
+                        <option value="<%=model.getId()%>"><%=model.getName()%>
                         </option>
                         <%}%>
                     </select>
                 </div>
 
 
-                <div class="form-group">
-                    <label>Member</label>
-                    <select name="member_id" class="form-control">
-                        <%
-                            query = "select * from member";
-                            preparedStatement = connection.prepareStatement(query);
-                            resultSet = preparedStatement.executeQuery();
-                            while (resultSet.next()) {
-                        %>
-                        <option value="<%=resultSet.getInt("id")%>"><%=resultSet.getString("email")%>
-                        </option>
-                        <%}%>
-                    </select>
-                </div>
+<%--                <div class="form-group">--%>
+<%--                    <label>Member</label>--%>
+<%--                    <select name="member_id" class="form-control">--%>
+<%--                        <%--%>
+<%--                            query = "select * from member";--%>
+<%--                            preparedStatement = connection.prepareStatement(query);--%>
+<%--                            resultSet = preparedStatement.executeQuery();--%>
+<%--                            while (resultSet.next()) {--%>
+<%--                        %>--%>
+<%--                        <option value="<%=resultSet.getInt("id")%>"><%=resultSet.getString("email")%>--%>
+<%--                        </option>--%>
+<%--                        <%}%>--%>
+<%--                    </select>--%>
+<%--                </div>--%>
 
                 <div class="form-group">
                     <label>Photo</label>

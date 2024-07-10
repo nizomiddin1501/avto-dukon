@@ -40,6 +40,22 @@ public class ModelService {
         }
         return modelList;
     }
+    public List<Model> getModels() {
+        List<Model> models = new ArrayList<>();
+        try {
+            String query = "select * from model;";
+            preparedStatement = this.connection.prepareStatement(query);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                models.add(new Model(id,name));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return models;
+    }
 
     public void addModel(Model model) {
         try {

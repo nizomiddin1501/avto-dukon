@@ -28,7 +28,8 @@ public class Main {
                     "3 => New Model, " +
                     "4 => New Car, " +
                     "5 => Brand List, " +
-                    "6 => Model List");
+                    "6 => Model List, " +
+                    "7 => Car List");
             int i = scanner.nextInt();
             switch (i) {
                 case 0: {
@@ -115,6 +116,12 @@ public class Main {
                 case 6: {
                     ModelService modelService = new ModelService(DbConnection.getConnection());
                     System.out.println(modelService.getAllModelList());
+                    break;
+                }
+
+                case 7: {
+                    CarService carService = new CarService(DbConnection.getConnection());
+                    System.out.println(carService.getAllCarList());
                     break;
                 }
 

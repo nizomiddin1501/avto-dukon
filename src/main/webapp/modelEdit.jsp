@@ -33,19 +33,37 @@
                     <select name="brand_id" class="form-control">
 
                         <%
+                            Connection connection = DbConnection.getConnection();
+                            String sql = "select * from model where id =?";
+                            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                            preparedStatement.setString(1,request.getParameter("id"));
+                            ResultSet resultSet = preparedStatement.executeQuery();
+                            if (resultSet.next()){
+                        %>
+
+
+
+
+                        <%
                             BrandService brandService = new BrandService(DbConnection.getConnection());
                             List<Brand> allBrands = brandService.getAllBrands();
                             for (Brand allBrand : allBrands) {
+                                String selection = "";
+                                if (allBrand.getId() == resultSet.getInt("brand_id")){
+                                    selection ="selected";
+                                }
                         %>
-                        <option value="<%=allBrand.getId()%>"><%=allBrand.getName()%></option>
+                        <option <%=selection%> value="<%=allBrand.getId()%>"><%=allBrand.getName()%></option>
                         <%}%>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputName">Model Name</label>
-                    <input type="text" class="form-control" name="name" id="exampleInputName"  placeholder="Enter Model Name">
+                    <input type="text" class="form-control" name="name" id="exampleInputName" value="<%=resultSet.getString("name")%>"  placeholder="Enter Model Name">
                 </div>
+
+                <%}%>
 
                 <button type="submit" class="btn btn-primary">Save</button>
             </form>

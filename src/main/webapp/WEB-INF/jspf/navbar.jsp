@@ -16,6 +16,11 @@
                 <li class="nav-item"><a class="nav-link" href="/model.jsp">Add Model</a></li>
                 <li class="nav-item"><a class="nav-link" href="/carList.jsp">Cars</a></li>
                 <li class="nav-item"><a class="nav-link" href="/car.jsp">Add Car</a></li>
+                <li class="nav-item"><a class="nav-link" href="/login.jsp">Log out</a></li>
+                <li class="nav-item"><a class="nav-link" href="/car.jsp">Add Car</a></li>
+                <li class="nav-item"><a class="nav-link" href="/car.jsp">Add Car</a></li>
+                <li class="nav-item"><a class="nav-link" href="/car.jsp">Add Car</a></li>
+                <li class="nav-item"><a class="nav-link" href="/car.jsp">Add Car</a></li>
 
         </div>
     </div>

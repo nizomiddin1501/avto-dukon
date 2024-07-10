@@ -1,11 +1,14 @@
 package uz.developers.service;
 
 import uz.developers.model.Car;
+import uz.developers.model.Model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CarService {
 
@@ -18,6 +21,28 @@ public class CarService {
         this.connection = connection;
     }
 
+    public List<Car> getAllCarList() {
+        List<Car> carList = new ArrayList<>();
+        try {
+            String query = "select car.id, car.title, brand.name as brandName, car.year, car.price, model.name as modelName from car " +
+                    " inner join model on model.id = car.model_id " +
+                    " inner join brand on brand.id = model.brand_id";
+            preparedStatement = this.connection.prepareStatement(query);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String title = resultSet.getString("title");
+                String brandName = resultSet.getString("brandName");
+                int year = resultSet.getInt("year");
+                int price = resultSet.getInt("price");
+                String modelName = resultSet.getString("modelName");
+                carList.add(new Car(id,title,brandName,year,price,modelName));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return carList;
+    }
 
     public void addCar(Car car) {
         try {

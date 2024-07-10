@@ -29,6 +29,11 @@ public class Model {
         this.brandName = brandName;
     }
 
+    public Model(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public String getBrandName() {
         return brandName;
     }

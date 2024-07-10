@@ -3,7 +3,10 @@
 <%@ page import="java.sql.PreparedStatement" %>
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="java.sql.SQLException" %>
-<%@ page import="uz.developers.service.BrandService" %><%--
+<%@ page import="uz.developers.service.BrandService" %>
+<%@ page import="uz.developers.service.CarService" %>
+<%@ page import="uz.developers.model.Car" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: user
   Date: 7/9/2024
@@ -43,7 +46,6 @@
             </hr>
 
             <table class="table">
-
                 <thead>
                 <tr>
                     <th scope="col">ID</th>
@@ -51,37 +53,28 @@
                     <th scope="col">Brand Name</th>
                     <th scope="col">Year</th>
                     <th scope="col">Price</th>
-                    <th scope="col">Model</th>
+                    <th scope="col">Model Name</th>
                 </tr>
                 </thead>
                 <tbody>
                 <%
-
-                    query = "select * from car inner join model on model.id = car.model_id inner join brand on brand.id = model.brand_id";
-                    preparedStatement = connection.prepareStatement(query);
-                    try {
-                        resultSet = preparedStatement.executeQuery();
-                    } catch (SQLException e) {
-                        throw new RuntimeException(e);
-                    }
-                    while (resultSet.next()){
+                    CarService carService = new CarService(DbConnection.getConnection());
+                    List<Car> allCarList = carService.getAllCarList();
+                    for (Car car : allCarList) {
                 %>
-
                 <tr>
-                    <th><%=resultSet.getInt(1)%></th>
-                    <th><%=resultSet.getString(2)%></th>
-                    <th><%=resultSet.getString(3)%></th>
-                    <th><%=resultSet.getString(4)%></th>
-                    <th><%=resultSet.getString(5)%></th>
-                    <th><%=resultSet.getString(6)%></th>
-
+                    <th><%=car.getId()%></th>
+                    <th><%=car.getTitle()%></th>
+                    <th><%=car.getBrandName()%></th>
+                    <th><%=car.getYear()%></th>
+                    <th><%=car.getPrice()%></th>
+                    <th><%=car.getModelName()%></th>
                     <td>
-                        <a href="modelShow.jsp?id=<%=resultSet.getInt(1)%>" class="btn btn-success">Show</a>
-                        <a href="modelEdit.jsp?id=<%=resultSet.getInt(1)%>" class="btn btn-warning">Edit</a>
-                        <a href="modelDelete.jsp?id=<%=resultSet.getInt(1)%>" class="btn btn-danger">Delete</a>
+                        <a href="modelShow.jsp?id=<%=car.getId()%>" class="btn btn-success">Show</a>
+                        <a href="modelEdit.jsp?id=<%=car.getId()%>" class="btn btn-warning">Edit</a>
+                        <a href="modelDelete.jsp?id=<%=car.getId()%>" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
-
                 <%}%>
                 </tbody>
 

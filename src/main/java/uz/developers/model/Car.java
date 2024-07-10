@@ -7,9 +7,21 @@ public class Car {
     private int year;
     private int price;
     private Integer model_id;
+    private String modelName;
     private Integer brand_id;
+    private String brandName;
     private Integer member_id;
 
+
+    public Car(Integer id, String title, String brandName, int year, int price, String modelName) {
+        this.id = id;
+        this.title = title;
+        this.brandName = brandName;
+        this.year = year;
+        this.price = price;
+        this.modelName = modelName;
+
+    }
 
     public Car(Integer id, String title, String description, int year, int price, Integer model_id, Integer member_id) {
         this.id = id;
@@ -30,6 +42,21 @@ public class Car {
         this.brand_id = brand_id;
     }
 
+    public String getModelName() {
+        return modelName;
+    }
+
+    public void setModelName(String modelName) {
+        this.modelName = modelName;
+    }
+
+    public String getBrandName() {
+        return brandName;
+    }
+
+    public void setBrandName(String brandName) {
+        this.brandName = brandName;
+    }
 
     public Integer getBrand_id() {
         return brand_id;
