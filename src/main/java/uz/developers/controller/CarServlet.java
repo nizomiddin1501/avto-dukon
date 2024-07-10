@@ -34,8 +34,8 @@ public class CarServlet extends HttpServlet {
         int year = Integer.parseInt(req.getParameter("year"));
         int price = Integer.parseInt(req.getParameter("price"));
         int model_id = Integer.parseInt(req.getParameter("model_id"));
-        int member_id = Integer.parseInt(req.getParameter("member_id"));
-        Car car = new Car(title,description,year,price,model_id,member_id);
+        int brand_id = Integer.parseInt(req.getParameter("brand_id"));
+        Car car = new Car(title,description,year,price,model_id,brand_id);
 
         CarService carService = new CarService(DbConnection.getConnection());
         carService.addCar(car);

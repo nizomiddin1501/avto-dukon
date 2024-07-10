@@ -1,3 +1,15 @@
+<%@ page import="java.sql.Connection" %>
+<%@ page import="uz.developers.service.DbConnection" %>
+<%@ page import="java.sql.PreparedStatement" %>
+<%@ page import="java.sql.ResultSet" %>
+<%
+    Connection connection = DbConnection.getConnection();
+    PreparedStatement preparedStatement;
+    ResultSet resultSet;
+    String query;
+
+%>
+
 <html>
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
@@ -9,11 +21,11 @@
 <div class="container">
 
 
-    <%@include file="WEB-INF/jspf/header.jsp"%>
+    <%@include file="WEB-INF/jspf/header.jsp" %>
 
     <div class="row">
         <div class="col-md-3">
-            <%@include file="WEB-INF/jspf/slidebar.jsp"%>
+            <%@include file="WEB-INF/jspf/slidebar.jsp" %>
         </div>
 
         <div class="col-md-9">
@@ -22,57 +34,74 @@
             <form action="/carAdd" method="post">
 
                 <div class="form-group">
-                    <label >Title</label>
-                    <input type="text" class="form-control" name="title"  placeholder="Enter Title">
+                    <label>Title</label>
+                    <input type="text" class="form-control" name="title" placeholder="Enter Title">
                 </div>
 
                 <div class="form-group">
-                    <label >Description</label>
+                    <label>Description</label>
                     <input type="text" class="form-control" name="description" placeholder="Enter Description">
                 </div>
 
                 <div class="form-group">
-                    <label >Year</label>
+                    <label>Year</label>
                     <input type="text" class="form-control" name="year" placeholder="Enter Year">
                 </div>
 
                 <div class="form-group">
-                    <label >Price</label>
+                    <label>Price</label>
                     <input type="text" class="form-control" name="price" placeholder="Enter Price">
                 </div>
 
 
-
-
                 <div class="form-group">
-                    <label >Model</label>
+                    <label>Model</label>
                     <select name="model_id" class="form-control">
-                        <option value="1">malibu</option>
+                        <%
+                            query = "select * from model";
+                            preparedStatement = connection.prepareStatement(query);
+                            resultSet = preparedStatement.executeQuery();
+                            while (resultSet.next()) {
+                        %>
+                        <option value="<%=resultSet.getInt("id")%>"><%=resultSet.getString("name")%>
+                        </option>
+                        <%}%>
                     </select>
                 </div>
 
 
                 <div class="form-group">
-                    <label >Member</label>
+                    <label>Member</label>
                     <select name="member_id" class="form-control">
-                        <option value="2">Nizomiddin</option>
+                        <%
+                            query = "select * from member";
+                            preparedStatement = connection.prepareStatement(query);
+                            resultSet = preparedStatement.executeQuery();
+                            while (resultSet.next()) {
+                        %>
+                        <option value="<%=resultSet.getInt("id")%>"><%=resultSet.getString("email")%>
+                        </option>
+                        <%}%>
                     </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Photo</label>
+                    <input type="file" class="form-control" name="photo" placeholder="Photo">
                 </div>
 
 
                 <button type="submit" class="btn btn-primary">Save</button>
             </form>
 
-<%--            <img src="E:/persistent/asd.jpg" alt="">--%>
-
-
-            </div>
+            <%--            <img src="E:/persistent/asd.jpg" alt="">--%>
 
 
         </div>
+
+
     </div>
-
-
+</div>
 
 
 </body>

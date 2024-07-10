@@ -7,6 +7,7 @@ public class Car {
     private int year;
     private int price;
     private Integer model_id;
+    private Integer brand_id;
     private Integer member_id;
 
 
@@ -20,13 +21,22 @@ public class Car {
         this.member_id = member_id;
     }
 
-    public Car(String title, String description, int year, int price, Integer model_id, Integer member_id) {
+    public Car(String title, String description, int year, int price, Integer model_id,Integer brand_id) {
         this.title = title;
         this.description = description;
         this.year = year;
         this.price = price;
         this.model_id = model_id;
-        this.member_id = member_id;
+        this.brand_id = brand_id;
+    }
+
+
+    public Integer getBrand_id() {
+        return brand_id;
+    }
+
+    public void setBrand_id(Integer brand_id) {
+        this.brand_id = brand_id;
     }
 
     public Integer getId() {

@@ -56,7 +56,7 @@
                 <button type="submit" class="btn btn-primary">Registration</button>
             </form>
 
-<%--            <img src="E:/persistent/asd.jpg" alt="">--%>
+
 
 
             </div>

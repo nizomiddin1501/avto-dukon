@@ -21,14 +21,14 @@ public class CarService {
 
     public void addCar(Car car) {
         try {
-            String insertQuery = "insert into car(title,description,year,price,model_id,member_id) values(?,?,?,?,?,?);";
+            String insertQuery = "insert into car(title,description,year,price,model_id,brand_id) values(?,?,?,?,?,?);";
             preparedStatement = this.connection.prepareStatement(insertQuery);
             preparedStatement.setString(1, car.getTitle());
             preparedStatement.setString(2, car.getDescription());
             preparedStatement.setInt(3, car.getYear());
             preparedStatement.setInt(4, car.getPrice());
             preparedStatement.setInt(5, car.getModel_id());
-            preparedStatement.setInt(6, car.getMember_id());
+            preparedStatement.setInt(6, car.getBrand_id());
 
             preparedStatement.executeUpdate();
             System.out.println("Car added successfully!!!");

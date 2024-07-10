@@ -18,6 +18,9 @@ public class Model {
         this.brand_id = brand_id;
     }
 
+    public Model() {
+    }
+
     public Integer getId() {
         return id;
     }
