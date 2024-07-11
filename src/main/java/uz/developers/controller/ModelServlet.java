@@ -19,14 +19,14 @@ import java.util.List;
 public class ModelServlet extends HttpServlet {
 
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ModelService modelService = new ModelService(DbConnection.getConnection());
-        List<Model> models = modelService.getAllModelList();
-        req.setAttribute("models", models);
-        req.getRequestDispatcher("/modelList.jsp").forward(req, resp);
-
-    }
+//    @Override
+//    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        ModelService modelService = new ModelService(DbConnection.getConnection());
+//        List<Model> models = modelService.getAllModelList();
+//        req.setAttribute("models", models);
+//        req.getRequestDispatcher("/modelList.jsp").forward(req, resp);
+//
+//    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -38,7 +38,7 @@ public class ModelServlet extends HttpServlet {
         Model model = new Model(name,brand_id);
         ModelService modelService = new ModelService(DbConnection.getConnection());
         modelService.addModel(model);
-        resp.sendRedirect("model.jsp");
+        resp.sendRedirect("modelList.jsp");
         PrintWriter writer = resp.getWriter();
         writer.println("Model added successfully!!!");
 

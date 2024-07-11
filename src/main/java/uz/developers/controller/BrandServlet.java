@@ -38,7 +38,7 @@ public class BrandServlet extends HttpServlet {
         Brand brand = new Brand(brandName);
         BrandService brandService = new BrandService(DbConnection.getConnection());
         brandService.addBrand(brand);
-        //resp.sendRedirect("registration.jsp");
+        resp.sendRedirect("brandList.jsp");
         PrintWriter writer = resp.getWriter();
         writer.println("Brand added successfully!!!");
 

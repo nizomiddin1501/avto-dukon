@@ -18,15 +18,15 @@ public class BrandUpdateServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        int brandId = Integer.parseInt(req.getParameter("id"));
-        String brandName = req.getParameter("name");
-
-        Brand brand = new Brand(brandId,brandName);
-        BrandService brandService = new BrandService(DbConnection.getConnection());
-        brandService.editBrand(brand);
-
-        PrintWriter writer = resp.getWriter();
-        writer.println("Brand edited successfully!!!");
+//        int brandId = Integer.parseInt(req.getParameter("id"));
+//        String brandName = req.getParameter("name");
+//
+//        Brand brand = new Brand(brandId,brandName);
+//        BrandService brandService = new BrandService(DbConnection.getConnection());
+//        brandService.editBrand(brand);
+//
+//        PrintWriter writer = resp.getWriter();
+//        writer.println("Brand edited successfully!!!");
 
 
 

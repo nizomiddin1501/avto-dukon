@@ -65,7 +65,7 @@ public class BrandService {
         }
     }
 
-    public void editBrand(Brand brand) {
+    public void updateBrand(Brand brand) {
         try {
             String updateQuery = "update brand set name=? where id=?";
             preparedStatement = this.connection.prepareStatement(updateQuery);
@@ -73,7 +73,7 @@ public class BrandService {
             preparedStatement.setInt(2, brand.getId());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
-            throw new RuntimeException("Error while editing brand", e);
+            throw new RuntimeException("Error while updating brand", e);
         }
     }
 
@@ -94,6 +94,38 @@ public class BrandService {
             e.printStackTrace();
         }
         return brandList;
+    }
+
+
+    public Brand getBrandById(int brandId) {
+        Brand brand = new Brand();
+        try {
+            String query = "select * from brand where id = ?;";
+            preparedStatement = this.connection.prepareStatement(query);
+            preparedStatement.setInt(1, brandId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                brand = new Brand(id, name);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return brand;
+    }
+
+
+    public void deleteBrand(int id) {
+        try {
+            String deleteQuery = "delete from brand where id =?";
+            preparedStatement = this.connection.prepareStatement(deleteQuery);
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+            System.out.println("Brand is deleted");
+        } catch (SQLException e) {
+            throw new RuntimeException("Error while deleting brand", e);
+        }
     }
 
 

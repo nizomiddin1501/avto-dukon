@@ -3,17 +3,13 @@
 <%@ page import="uz.developers.model.Brand" %>
 <%@ page import="java.util.List" %>
 
+<%@ page import="uz.developers.service.ModelService" %>
+<%@ page import="uz.developers.service.DbConnection" %>
 <%
     int id = Integer.parseInt(request.getParameter("id"));
     BrandService brandService = new BrandService(DbConnection.getConnection());
-    Brand brand = brandService.getBrandById(id);
-
-    if (request.getMethod().equalsIgnoreCase("POST")) {
-        String name = request.getParameter("name");
-        brand.setName(name);
-        brandService.updateBrand(brand);
-        response.sendRedirect("brandList.jsp");
-    }
+    brandService.deleteBrand(id);
+    response.sendRedirect("modelList.jsp");
 %>
 
 <html>
@@ -24,17 +20,17 @@
 <body>
 <h2>Hello World!</h2>
 
-<div class="container">
-    <h2>Edit Model</h2>
-    <form method="post">
-        <div class="form-group">
-            <label for="name">Brand Name</label>
-            <input type="text" class="form-control" id="name" name="name" value="<%=brand.getName()%>" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Save</button>
-        <a href="brandList.jsp" class="btn btn-secondary">Cancel</a>
-    </form>
-</div>
+<%--<div class="container">--%>
+<%--    <h2>Edit Model</h2>--%>
+<%--    <form method="post">--%>
+<%--        <div class="form-group">--%>
+<%--            <label for="name">Brand Name</label>--%>
+<%--            <input type="text" class="form-control" id="name" name="name" value="<%=brand.getName()%>" required>--%>
+<%--        </div>--%>
+<%--        <button type="submit" class="btn btn-primary">Save</button>--%>
+<%--        <a href="brandList.jsp" class="btn btn-secondary">Cancel</a>--%>
+<%--    </form>--%>
+<%--</div>--%>
 
 
 

@@ -33,13 +33,14 @@ public class ModelService {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
                 String brandName = resultSet.getString("brand_name");
-                modelList.add(new Model(id,name,brandName));
+                modelList.add(new Model(id, name, brandName));
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         return modelList;
     }
+
     public List<Model> getModels() {
         List<Model> models = new ArrayList<>();
         try {
@@ -49,7 +50,7 @@ public class ModelService {
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
-                models.add(new Model(id,name));
+                models.add(new Model(id, name));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -61,16 +62,16 @@ public class ModelService {
         try {
             String checkNameQuery = "select count(*) from model where name = ?";
             preparedStatement = this.connection.prepareStatement(checkNameQuery);
-            preparedStatement.setString(1,model.getName());
+            preparedStatement.setString(1, model.getName());
             ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()){
-                if (resultSet.getInt(1)>0){
+            while (resultSet.next()) {
+                if (resultSet.getInt(1) > 0) {
                     System.out.println("Model already exists. Please use a different name.");
-                }else {
+                } else {
                     String insertQuery = "insert into model(name,brand_id) values(?,?);";
                     preparedStatement = this.connection.prepareStatement(insertQuery);
-                    preparedStatement.setString(1,model.getName());
-                    preparedStatement.setInt(2,model.getBrand_id());
+                    preparedStatement.setString(1, model.getName());
+                    preparedStatement.setInt(2, model.getBrand_id());
                     preparedStatement.executeUpdate();
                     System.out.println("Model added successfully!!!");
 
@@ -83,6 +84,73 @@ public class ModelService {
             throw new RuntimeException("Error while adding model", e);
         }
     }
+
+    public void updateModel(Model model) {
+        try {
+            String updateQuery = "update model set name=? where id=?";
+            preparedStatement = this.connection.prepareStatement(updateQuery);
+            preparedStatement.setString(1, model.getName());
+            //preparedStatement.setInt(2, model.getBrand_id());
+            preparedStatement.setInt(2, model.getId());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error while updating model", e);
+        }
+    }
+
+    public List<Model> getModel(int modelId) {
+        List<Model> models = new ArrayList<>();
+        try {
+            String query = "select * from model where id = ?;";
+            preparedStatement = this.connection.prepareStatement(query);
+            preparedStatement.setInt(1, modelId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                models.add(new Model(id, name));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return models;
+    }
+
+
+    public Model getModelById(int modelId) {
+        Model model = new Model();
+        try {
+            String query = "select * from model where id = ?;";
+            preparedStatement = this.connection.prepareStatement(query);
+            preparedStatement.setInt(1, modelId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                model = new Model(id, name);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return model;
+    }
+
+
+
+
+
+    public void deleteModel(int id) {
+        try {
+            String deleteQuery = "delete from model where id =?";
+            preparedStatement = this.connection.prepareStatement(deleteQuery);
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+            System.out.println("Model is deleted");
+        } catch (SQLException e) {
+            throw new RuntimeException("Error while deleting model", e);
+        }
+    }
+
 
 
 

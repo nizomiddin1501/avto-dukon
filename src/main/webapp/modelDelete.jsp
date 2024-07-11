@@ -1,23 +1,13 @@
-<%@ page import="java.sql.Connection" %>
+
 <%@ page import="uz.developers.service.DbConnection" %>
-<%@ page import="java.sql.PreparedStatement" %>
-<%@ page import="java.sql.ResultSet" %>
-<%@ page import="uz.developers.service.BrandService" %>
-<%@ page import="uz.developers.model.Brand" %>
-<%@ page import="java.util.List" %>
+
 <%@ page import="uz.developers.service.ModelService" %>
-<%@ page import="uz.developers.model.Model" %>
+
 <%
     int id = Integer.parseInt(request.getParameter("id"));
     ModelService modelService = new ModelService(DbConnection.getConnection());
-    Model model = modelService.getModelById(id);
-
-    if (request.getMethod().equalsIgnoreCase("POST")) {
-        String name = request.getParameter("name");
-        model.setName(name);
-        modelService.updateModel(model);
-        response.sendRedirect("modelList.jsp");
-    }
+    modelService.deleteModel(id);
+    response.sendRedirect("modelList.jsp");
 %>
 <html>
 <head>
@@ -27,23 +17,24 @@
 <body>
 <h2>Hello World!</h2>
 
-<div class="container">
-    <h2>Edit Model</h2>
-    <form method="post">
-        <div class="form-group">
-            <label for="name">Model Name</label>
-            <input type="text" class="form-control" id="name" name="name" value="<%=model.getName()%>" required>
-        </div>
-
+<%--<div class="container">--%>
+<%--    <h2>Edit Model</h2>--%>
+<%--    <form method="post">--%>
 <%--        <div class="form-group">--%>
-<%--            <label for="name">Brand Name</label>--%>
-<%--            <input type="text" class="form-control" id="brand" name="name" value="<%=model.getBrand_id()%>" required>--%>
+<%--            <label for="name">Model Name</label>--%>
+<%--            <input type="text" class="form-control" id="name" name="name" value="<%=model.getName()%>" required>--%>
 <%--        </div>--%>
 
-        <button type="submit" class="btn btn-primary">Save</button>
-        <a href="modelList.jsp" class="btn btn-secondary">Cancel</a>
-    </form>
-</div>
+
+<%--        <button type="submit" class="btn btn-primary">Save</button>--%>
+<%--        <a href="modelList.jsp" class="btn btn-secondary">Cancel</a>--%>
+<%--    </form>--%>
+<%--</div>--%>
+
+
+
+
+
 
 
 

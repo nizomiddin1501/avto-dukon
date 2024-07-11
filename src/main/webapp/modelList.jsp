@@ -35,28 +35,6 @@
                 </tr>
                 </thead>
                 <tbody>
-                <%--//--%>
-<%--                <%--%>
-<%--                    Connection connection = DbConnection.getConnection();--%>
-<%--                    String query = "select * from model inner join brand on brand.id = model.brand_id";--%>
-<%--                    PreparedStatement preparedStatement = connection.prepareStatement(query);--%>
-<%--                    ResultSet resultSet = preparedStatement.executeQuery();--%>
-<%--                    while (resultSet.next()) {--%>
-<%--                %>--%>
-<%--                <tr>--%>
-<%--                    <th><%=resultSet.getInt("model.id")%></th>--%>
-<%--                    <th><%=resultSet.getString("model.name")%></th>--%>
-<%--                    <th><%=resultSet.getString("brand.name")%></th>--%>
-<%--<td>--%>
-<%--    <a href="modelShow.jsp?id=<%=resultSet.getInt("model.id")%>" class="btn btn-success">Show</a>--%>
-<%--    <a href="modelEdit.jsp?id=<%=resultSet.getInt("model.id")%>" class="btn btn-warning">Edit</a>--%>
-<%--    <a href="modelDelete.jsp?id=<%=resultSet.getInt("model.id")%>" class="btn btn-danger">Delete</a>--%>
-<%--</td>--%>
-<%--</tr>--%>
-
-<%--<%}%>--%>
-
-<%--//--%>
                 <%
                     ModelService modelService = new ModelService(DbConnection.getConnection());
                     List<Model> allModelList = modelService.getAllModelList();
@@ -67,9 +45,10 @@
                     <th><%=model.getName()%></th>
                     <th><%=model.getBrandName()%></th>
                     <td>
-                        <a href="modelShow.jsp?id=<%=model.getId()%>" class="btn btn-success">Show</a>
+                        <a href="model.jsp?id=<%=model.getId()%>" class="btn btn-success">Add</a>
                         <a href="modelEdit.jsp?id=<%=model.getId()%>" class="btn btn-warning">Edit</a>
-                        <a href="modelDelete.jsp?id=<%=model.getId()%>" class="btn btn-danger">Delete</a>
+                        <a href="modelDelete.jsp?id=<%=model.getId()%>" class="btn btn-danger"
+                           onclick="return confirm('Are you sure you want to delete this model?');">Delete</a>
                     </td>
                 </tr>
                 <%}%>

@@ -39,7 +39,7 @@ public class CarServlet extends HttpServlet {
 
         CarService carService = new CarService(DbConnection.getConnection());
         carService.addCar(car);
-        //resp.sendRedirect("car.jsp");
+        resp.sendRedirect("carList.jsp");
         PrintWriter writer = resp.getWriter();
         writer.println("Car added successfully!!!");
 

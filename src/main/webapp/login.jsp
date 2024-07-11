@@ -19,7 +19,7 @@
         <div class="col-md-9">
             <h2>Login</h2>
             </hr>
-            <form action="login.jsp" method="post">
+            <form action="/login" method="post">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
                     <input type="email" class="form-control" id="exampleInputEmail1"  placeholder="Enter email">

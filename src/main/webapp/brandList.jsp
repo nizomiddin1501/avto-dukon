@@ -45,9 +45,9 @@
                     <th><%=allBrand.getId()%></th>
                     <th><%=allBrand.getName()%></th>
                     <td>
-                        <a href="show.jsp?id=<%=allBrand.getId()%>" class="btn btn-success">Show</a>
-                        <a href="edit.jsp?id=<%=allBrand.getId()%>" class="btn btn-warning">Edit</a>
-                        <a href="delete.jsp?id=<%=allBrand.getId()%>" class="btn btn-danger">Delete</a>
+                        <a href="brand.jsp?id=<%=allBrand.getId()%>" class="btn btn-success">Add</a>
+                        <a href="brandEdit.jsp?id=<%=allBrand.getId()%>" class="btn btn-warning">Edit</a>
+                        <a href="brandDelete.jsp?id=<%=allBrand.getId()%>" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
                 <%}%>

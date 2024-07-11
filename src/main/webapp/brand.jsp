@@ -30,7 +30,7 @@
                 <button type="submit" class="btn btn-primary">Save</button>
             </form>
 
-<%--            <img src="E:/persistent/asd.jpg" alt="">--%>
+
 
 
             </div>
