@@ -10,6 +10,7 @@ public class Car {
     private String modelName;
     private Integer brand_id;
     private String brandName;
+    private String photo;
     private Integer member_id;
 
     public Car() {
@@ -20,12 +21,13 @@ public class Car {
         this.price = price;
     }
 
-    public Car(Integer id, String title, String brandName, int year, int price, String modelName) {
+    public Car(Integer id, String title, String brandName, int year, int price,String photo, String modelName) {
         this.id = id;
         this.title = title;
         this.brandName = brandName;
         this.year = year;
         this.price = price;
+        this.photo = photo;
         this.modelName = modelName;
 
     }
@@ -47,6 +49,14 @@ public class Car {
         this.price = price;
         this.model_id = model_id;
         this.brand_id = brand_id;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
     public String getModelName() {

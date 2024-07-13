@@ -22,7 +22,6 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<h2>Hello World!</h2>
 
 <div class="container">
     <h2>Edit Model</h2>
@@ -103,6 +102,9 @@
 <%--    </div>--%>
 
 
+<form action="brandList.jsp">
+    <input  type="submit" value="Previous">
+</form>
 
 
 

@@ -2,6 +2,7 @@ package uz.developers.service;
 
 import uz.developers.model.Car;
 import uz.developers.model.Model;
+import uz.developers.model.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -24,7 +25,7 @@ public class CarService {
     public List<Car> getAllCarList() {
         List<Car> carList = new ArrayList<>();
         try {
-            String query = "select car.id, car.title, brand.name as brandName, car.year, car.price, model.name as modelName from car " +
+            String query = "select car.id, car.title, brand.name as brandName, car.year, car.price, car.photo, model.name as modelName from car " +
                     " inner join model on model.id = car.model_id " +
                     " inner join brand on brand.id = model.brand_id";
             preparedStatement = this.connection.prepareStatement(query);
@@ -35,8 +36,9 @@ public class CarService {
                 String brandName = resultSet.getString("brandName");
                 int year = resultSet.getInt("year");
                 int price = resultSet.getInt("price");
+                String photo = resultSet.getString("photo");
                 String modelName = resultSet.getString("modelName");
-                carList.add(new Car(id,title,brandName,year,price,modelName));
+                carList.add(new Car(id,title,brandName,year,price,photo,modelName));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -48,20 +50,33 @@ public class CarService {
     public Car getCarById(int carId) {
         Car car = new Car();
         try {
-            String query = "select * from car where id = ?;";
+            String query = "select car.id, car.title, brand.name as brandName, car.year, car.price, car.photo, model.name as modelName from car " +
+                    " inner join model on model.id = car.model_id " +
+                    " inner join brand on brand.id = model.brand_id where car.id=?";
             preparedStatement = this.connection.prepareStatement(query);
             preparedStatement.setInt(1, carId);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
+                String title = resultSet.getString("title");
+                String brandName = resultSet.getString("brandName");
+                int year = resultSet.getInt("year");
                 int price = resultSet.getInt("price");
-                car = new Car(id,price);
+                String photo = resultSet.getString("photo");
+                String modelName = resultSet.getString("modelName");
+                //String description = resultSet.getString("description");
+                car = new Car(id,title,brandName,year,price,photo,modelName);
             }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
         return car;
     }
+
+
+
+
 
     public void addCar(Car car) {
         try {
@@ -93,6 +108,18 @@ public class CarService {
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException("Error while updating car", e);
+        }
+    }
+
+    public void deleteCar(int id) {
+        try {
+            String deleteQuery = "delete from car where id =?";
+            preparedStatement = this.connection.prepareStatement(deleteQuery);
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+            System.out.println("Car is deleted");
+        } catch (SQLException e) {
+            throw new RuntimeException("Error while deleting car", e);
         }
     }
 

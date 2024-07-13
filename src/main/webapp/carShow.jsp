@@ -1,13 +1,10 @@
 <%@ page import="uz.developers.service.DbConnection" %>
-<%@ page import="java.util.List" %>
-<%@ page import="uz.developers.service.ModelService" %>
-<%@ page import="uz.developers.model.Model" %>
-<%@ page import="uz.developers.service.UserService" %>
-<%@ page import="uz.developers.model.User" %>
+<%@ page import="uz.developers.service.CarService" %>
+<%@ page import="uz.developers.model.Car" %>
 <%
-    int clientId = Integer.parseInt(request.getParameter("id"));
-    UserService userService = new UserService(DbConnection.getConnection());
-    User userById = userService.getUserById(clientId);
+    int carId = Integer.parseInt(request.getParameter("id"));
+    CarService carService = new CarService(DbConnection.getConnection());
+    Car carById = carService.getCarById(carId);
 %>
 
 <html>
@@ -28,23 +25,23 @@
                             <div class="card-body p-4">
                                 <div class="d-flex">
                                     <div class="flex-shrink-0">
-                                        <img src="<%= request.getContextPath() %>/<%= userById.getPhoto() %>" alt="Client Photo"
+                                        <img src="<%= request.getContextPath() %>/<%= carById.getPhoto() %>" alt="Client Photo"
                                              class="img-fluid" style="width: 150px; border-radius: 50px;">
                                     </div>
                                     <div class="flex-grow-1 ms-3">
                                         <div class="container">
                                             <ul>
-                                                <li><h5 class="mb-2"><%= userById.getFirstname() %></h5></li>
-                                                <li><h5 class="mb-1"><%= userById.getLastname() %></h5></li>
-                                                <li><h5 class="mb-1"><%= userById.getEmail() %></h5></li>
-                                                <li><h5 class="mb-1"><%= userById.getPassword() %></h5></li>
-                                                <li><h5 class="mb-1"><%= userById.getPhone_number() %></h5></li>
-                                            </ul>
+                                                <li><h5 class="mb-1"><%= carById.getTitle() %></h5></li>
+                                                <li><h5 class="mb-1"><%= carById.getBrandName() %></h5></li>
+                                                <li><h5 class="mb-1"><%= carById.getYear() %></h5></li>
+                                                <li><h5 class="mb-1"><%= carById.getPrice() %></h5></li>
+                                                <li><h5 class="mb-1"><%= carById.getModelName() %></h5></li>
+                                                </ul>
                                         </div>
 
                                         <div class="d-flex justify-content-center pt-1">
-                                            <a href="clientList.jsp?id=<%=userById.getId()%>" class="btn btn-primary">Previous</a>
-                                            <a href="home.jsp?id=<%=userById.getId()%>" class="btn btn-light">Home</a>
+                                            <a href="carList.jsp?id=<%=carById.getId()%>" class="btn btn-primary">Previous</a>
+                                            <a href="home.jsp?id=<%=carById.getId()%>" class="btn btn-light">Home</a>
 <%--                                            <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-primary me-1 flex-grow-1">Chat</button>--%>
 <%--                                            <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary flex-grow-1">Follow</button>--%>
                                         </div>
@@ -55,9 +52,6 @@
                     </div>
                 </div>
             </section>
-
-
-
 
 
 </body>

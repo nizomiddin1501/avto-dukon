@@ -10,46 +10,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17c975d4-a70f-4159-ae05-86feec8daafd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/carEdit.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/clientList.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/clientShow.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cars/01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cars/Honda.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cars/KIAoptima.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cars/epica.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cars/escape.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cars/image1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cars/image2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cars/malibuDark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cars/malibuGrey.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cars/malibuWhite.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cars/nexia003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cars/nexia03.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cars/nexia3.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cars/sparkDark.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cars/sparkGreen.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cars/sparkOq.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cars/sparkPhoto.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/users/Brat.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/users/asd.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/users/developer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/users/unnamed.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/users/user1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/users/user2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/users/user3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/users/user4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/users/user5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/carShow.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/clientDelete.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uz/developers/controller/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uz/developers/controller/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uz/developers/controller/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uz/developers/controller/RegisterServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uz/developers/controller/BrandUpdateServlet.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uz/developers/model/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uz/developers/model/Car.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uz/developers/service/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uz/developers/service/CarService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uz/developers/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uz/developers/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jspf/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jspf/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jspf/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jspf/navbar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jspf/slidebar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jspf/slidebar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/brand.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/brand.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/brandDelete.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/brandDelete.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/brandEdit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/brandEdit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/brandList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/brandList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/car.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/car.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/carEdit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/carEdit.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/carList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/carList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/clientList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/clientList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/clientShow.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/clientShow.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/model.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/model.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/modelDelete.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/modelDelete.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/modelEdit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/modelEdit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/modelList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/modelList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/registration.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/registration.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,7 +228,7 @@
       <workItem from="1720633430822" duration="4410000" />
       <workItem from="1720674654501" duration="16362000" />
       <workItem from="1720763187254" duration="7414000" />
-      <workItem from="1720853844025" duration="12247000" />
+      <workItem from="1720853844025" duration="23661000" />
     </task>
     <servers />
   </component>
@@ -255,18 +240,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/uz/developers/service/CarService.java</url>
-          <line>67</line>
+          <line>82</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uz/developers/controller/LoginServlet.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="20" />
+          <url>file://$PROJECT_DIR$/src/main/webapp/clientList.jsp</url>
+          <line>32</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/uz/developers/service/UserService.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="21" />
+          <line>78</line>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

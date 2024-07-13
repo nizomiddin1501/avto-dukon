@@ -25,15 +25,8 @@
 
 
 <div class="container">
-
-
-    <%@include file="WEB-INF/jspf/header.jsp" %>
-
+    <form action="/car" method="post">
     <div class="row">
-        <div class="col-md-3">
-            <%@include file="WEB-INF/jspf/slidebar.jsp" %>
-        </div>
-
         <div class="col-md-9">
             <h2>Car List</h2>
             </hr>
@@ -46,6 +39,7 @@
                     <th scope="col">Brand Name</th>
                     <th scope="col">Year</th>
                     <th scope="col">Price</th>
+                    <th scope="col">Photo</th>
                     <th scope="col">Model Name</th>
                 </tr>
                 </thead>
@@ -61,26 +55,33 @@
                     <th><%=car.getBrandName()%></th>
                     <th><%=car.getYear()%></th>
                     <th><%=car.getPrice()%></th>
+                    <th><img src="<%= car.getPhoto() %>" alt="Car Photo" width="50" height="30"></th>
                     <th><%=car.getModelName()%></th>
                     <td>
-                        <a href="car.jsp?id=<%=car.getId()%>" class="btn btn-success">Add</a>
+
+                        <a href="carShow.jsp?id=<%=car.getId()%>" class="btn btn-success">Show</a>
                         <a href="carEdit.jsp?id=<%=car.getId()%>" class="btn btn-light">Edit</a>
+                        <a href="carDelete.jsp?id=<%=car.getId()%>" class="btn btn-danger"
+                           onclick="return confirm('Are you sure you want to delete this car?');">Delete</a>
                         <a href="buy.jsp?id=<%=car.getId()%>" class="btn btn-primary">Buy</a>
-                        <a href="carDelete.jsp?id=<%=car.getId()%>" class="btn btn-danger">Delete</a>
+
                     </td>
                 </tr>
                 <%}%>
                 </tbody>
 
             </table>
-
-
         </div>
-
-
     </div>
+<%--        <button type="submit" class="btn btn-primary" style="float: right">Add Car</button>--%>
+        <a href="car.jsp?id=" class="btn btn-success">Add Car</a>
+
+    </form>
 </div>
 
+<form action="home.jsp">
+    <input  type="submit" value="Previous">
+</form>
 
 
 

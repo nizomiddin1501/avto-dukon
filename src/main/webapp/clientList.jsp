@@ -11,12 +11,9 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<h2>Hello World!</h2>
 <div class="container">
-    <%@include file="WEB-INF/jspf/header.jsp" %>
     <div class="row">
         <div class="col-md-3">
-            <%@include file="WEB-INF/jspf/slidebar.jsp" %>
         </div>
         <div class="col-md-9">
             <h2>Clients List</h2>
@@ -48,7 +45,8 @@
                         <a href="clientShow.jsp?id=<%=user.getId()%>" class="btn btn-success">Show</a>
                         <a href="clientEdit.jsp?id=<%=user.getId()%>" class="btn btn-warning">Edit</a>
                         <a href="clientDelete.jsp?id=<%=user.getId()%>" class="btn btn-danger"
-                           onclick="return confirm('Are you sure you want to delete this model?');">Delete</a>
+                           onclick="return confirm('Are you sure you want to delete this client?');">Delete</a>
+
                     </td>
                 </tr>
                 <%}%>
@@ -57,5 +55,10 @@
         </div>
     </div>
 </div>
+
+
+<form action="home.jsp">
+    <input  type="submit" value="Previous">
+</form>
 </body>
 </html>

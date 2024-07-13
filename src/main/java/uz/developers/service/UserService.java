@@ -97,28 +97,6 @@ public class UserService {
         return userList;
     }
 
-    public List<User> getClientById(int userId) {
-        List<User> users = new ArrayList<>();
-        try {
-            String query = "select * from member where id = ?;";
-            preparedStatement = this.connection.prepareStatement(query);
-            preparedStatement.setInt(1, userId);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                int id = resultSet.getInt("id");
-                String firstname = resultSet.getString("firstname");
-                String lastname = resultSet.getString("lastname");
-                String email = resultSet.getString("email");
-                String password = resultSet.getString("password");
-                String photo = resultSet.getString("photo");
-                String phone_number = resultSet.getString("phone_number");
-                users.add(new User(id, firstname, lastname, email, password, photo, phone_number));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return users;
-    }
 
     public User getUserById(int userId) {
         User user = new User();
@@ -141,6 +119,18 @@ public class UserService {
             e.printStackTrace();
         }
         return user;
+    }
+
+    public void deleteClient(int id) {
+        try {
+            String deleteQuery = "delete from member where id =?";
+            preparedStatement = this.connection.prepareStatement(deleteQuery);
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+            System.out.println("Client is deleted");
+        } catch (SQLException e) {
+            throw new RuntimeException("Error while deleting client", e);
+        }
     }
 
 

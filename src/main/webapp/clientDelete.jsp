@@ -1,13 +1,12 @@
 
 <%@ page import="uz.developers.service.DbConnection" %>
-
-<%@ page import="uz.developers.service.ModelService" %>
+<%@ page import="uz.developers.service.UserService" %>
 
 <%
     int id = Integer.parseInt(request.getParameter("id"));
-    ModelService modelService = new ModelService(DbConnection.getConnection());
-    modelService.deleteModel(id);
-    response.sendRedirect("modelList.jsp");
+    UserService userService = new UserService(DbConnection.getConnection());
+    userService.deleteClient(id);
+    response.sendRedirect("clientList.jsp");
 %>
 <html>
 <head>

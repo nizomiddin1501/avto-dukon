@@ -12,13 +12,15 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Avto Dukon</title>
-    <%@include file="WEB-INF/jspf/header.jsp" %>
+
 </head>
 <body>
 
 <%@include file="WEB-INF/jspf/navbar.jsp" %>
 <div class="container">
     <div class="card-header my-3">Main page</div>
+
+    <%@include file="WEB-INF/jspf/slidebar.jsp"%>
 </div>
 
 
