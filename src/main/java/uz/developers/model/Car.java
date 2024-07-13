@@ -12,6 +12,13 @@ public class Car {
     private String brandName;
     private Integer member_id;
 
+    public Car() {
+    }
+
+    public Car(Integer id, int price) {
+        this.id = id;
+        this.price = price;
+    }
 
     public Car(Integer id, String title, String brandName, int year, int price, String modelName) {
         this.id = id;

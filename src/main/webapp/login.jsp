@@ -1,3 +1,13 @@
+<%@ page import="uz.developers.model.User" %><%
+    User auth = (User) request.getSession().getAttribute("auth");
+    request.getSession().removeAttribute("auth");
+    if (auth != null) {
+        response.sendRedirect("home.jsp");
+    }
+%>
+
+
+
 <html>
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
@@ -9,39 +19,30 @@
 <div class="container">
 
 
-    <%@include file="WEB-INF/jspf/header.jsp"%>
+    <%@include file="WEB-INF/jspf/header.jsp" %>
 
     <div class="row">
         <div class="col-md-3">
-            <%@include file="WEB-INF/jspf/slidebar.jsp"%>
+            <%@include file="WEB-INF/jspf/slidebar.jsp" %>
         </div>
 
         <div class="col-md-9">
             <h2>Login</h2>
             </hr>
-            <form action="/login" method="post">
+            <form action="login" method="post">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1"  placeholder="Enter email">
+                    <label for="exampleInputEmail">Email address</label>
+                    <input type="email" class="form-control" name="email" id="exampleInputEmail" placeholder="Enter email" required>
                 </div>
-
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <label for="exampleInputPassword">Password</label>
+                    <input type="password" class="form-control" name="password" id="exampleInputPassword" placeholder="***********"
+                           required>
                 </div>
-
                 <button type="submit" class="btn btn-primary">Login</button>
             </form>
-
-
-            </div>
-
-
         </div>
     </div>
-
-
-
-
+</div>
 </body>
 </html>

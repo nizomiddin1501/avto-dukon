@@ -44,6 +44,25 @@ public class CarService {
         return carList;
     }
 
+
+    public Car getCarById(int carId) {
+        Car car = new Car();
+        try {
+            String query = "select * from car where id = ?;";
+            preparedStatement = this.connection.prepareStatement(query);
+            preparedStatement.setInt(1, carId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                int price = resultSet.getInt("price");
+                car = new Car(id,price);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return car;
+    }
+
     public void addCar(Car car) {
         try {
             String insertQuery = "insert into car(title,description,year,price,model_id,brand_id) values(?,?,?,?,?,?);";
@@ -62,6 +81,19 @@ public class CarService {
             throw new RuntimeException(e);
         }
 
+    }
+
+
+    public void updateCar(Car car) {
+        try {
+            String updateQuery = "update car set price=? where id=?";
+            preparedStatement = this.connection.prepareStatement(updateQuery);
+            preparedStatement.setInt(1, car.getPrice());
+            preparedStatement.setInt(2, car.getId());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error while updating car", e);
+        }
     }
 
 

@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="home.jsp">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="/">Clients</a></li>
+                <li class="nav-item"><a class="nav-link" href="/clientList.jsp">Clients</a></li>
                 <li class="nav-item"><a class="nav-link" href="/brandList.jsp">Brands</a></li>
                 <li class="nav-item"><a class="nav-link" href="/modelList.jsp">Models</a></li>
                 <li class="nav-item"><a class="nav-link" href="/carList.jsp">Cars</a></li>

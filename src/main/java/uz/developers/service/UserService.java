@@ -1,8 +1,11 @@
 package uz.developers.service;
 
+import uz.developers.model.Model;
 import uz.developers.model.User;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserService {
 
@@ -62,11 +65,80 @@ public class UserService {
                 password = resultSet.getString(5);
                 String photo = resultSet.getString(6);
                 String phone_number = resultSet.getString(7);
-                user = new User(id,firstname,lastname,email,password,photo,phone_number);
+                user = new User(id, firstname, lastname, email, password, photo, phone_number);
             }
         } catch (Exception e) {
             e.printStackTrace();
             System.out.print(e.getMessage());
+        }
+        return user;
+    }
+
+
+    public List<User> getAllClientList() {
+        List<User> userList = new ArrayList<>();
+        try {
+            String selectQuery = "select * from member;";
+            preparedStatement = this.connection.prepareStatement(selectQuery);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String firstname = resultSet.getString("firstname");
+                String lastname = resultSet.getString("lastname");
+                String email = resultSet.getString("email");
+                String password = resultSet.getString("password");
+                String photo = resultSet.getString("photo");
+                String phone_number = resultSet.getString("phone_number");
+                userList.add(new User(id, firstname, lastname, email, password, photo, phone_number));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return userList;
+    }
+
+    public List<User> getClientById(int userId) {
+        List<User> users = new ArrayList<>();
+        try {
+            String query = "select * from member where id = ?;";
+            preparedStatement = this.connection.prepareStatement(query);
+            preparedStatement.setInt(1, userId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String firstname = resultSet.getString("firstname");
+                String lastname = resultSet.getString("lastname");
+                String email = resultSet.getString("email");
+                String password = resultSet.getString("password");
+                String photo = resultSet.getString("photo");
+                String phone_number = resultSet.getString("phone_number");
+                users.add(new User(id, firstname, lastname, email, password, photo, phone_number));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return users;
+    }
+
+    public User getUserById(int userId) {
+        User user = new User();
+        try {
+            String query = "select * from member where id = ?;";
+            preparedStatement = this.connection.prepareStatement(query);
+            preparedStatement.setInt(1, userId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String firstname = resultSet.getString("firstname");
+                String lastname = resultSet.getString("lastname");
+                String email = resultSet.getString("email");
+                String password = resultSet.getString("password");
+                String photo = resultSet.getString("photo");
+                String phone_number = resultSet.getString("phone_number");
+                user = new User(id, firstname,lastname,email,password,photo,phone_number);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return user;
     }

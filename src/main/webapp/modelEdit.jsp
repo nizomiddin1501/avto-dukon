@@ -35,10 +35,6 @@
             <input type="text" class="form-control" id="name" name="name" value="<%=model.getName()%>" required>
         </div>
 
-<%--        <div class="form-group">--%>
-<%--            <label for="name">Brand Name</label>--%>
-<%--            <input type="text" class="form-control" id="brand" name="name" value="<%=model.getBrand_id()%>" required>--%>
-<%--        </div>--%>
 
         <button type="submit" class="btn btn-primary">Save</button>
         <a href="modelList.jsp" class="btn btn-secondary">Cancel</a>

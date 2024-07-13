@@ -64,7 +64,8 @@
                     <th><%=car.getModelName()%></th>
                     <td>
                         <a href="car.jsp?id=<%=car.getId()%>" class="btn btn-success">Add</a>
-                        <a href="carEdit.jsp?id=<%=car.getId()%>" class="btn btn-warning">Edit</a>
+                        <a href="carEdit.jsp?id=<%=car.getId()%>" class="btn btn-light">Edit</a>
+                        <a href="buy.jsp?id=<%=car.getId()%>" class="btn btn-primary">Buy</a>
                         <a href="carDelete.jsp?id=<%=car.getId()%>" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>

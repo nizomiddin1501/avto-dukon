@@ -34,7 +34,7 @@ public class RegisterServlet extends HttpServlet {
         User user = new User(firstname,lastname,email,password,photo,phone_number);
         UserService userService = new UserService(DbConnection.getConnection());
         userService.addUser(user);
-        //resp.sendRedirect("registration.jsp");
+        resp.sendRedirect("login.jsp");
         PrintWriter writer = resp.getWriter();
         writer.println("Registration success!!!");
 
