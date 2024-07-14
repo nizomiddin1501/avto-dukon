@@ -5,11 +5,12 @@
 <%@ page import="uz.developers.service.ModelService" %>
 <%@ page import="uz.developers.model.Model" %>
 <%@ page import="java.util.List" %>
-<%
-    Connection connection = DbConnection.getConnection();
-    PreparedStatement preparedStatement;
-    ResultSet resultSet;
-    String query;
+
+<%@ page import="uz.developers.model.User" %><%
+    User auth = (User) request.getSession().getAttribute("auth");
+    if (auth != null) {
+        request.setAttribute("auth", auth);
+    }
 
 %>
 
@@ -19,8 +20,15 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+<form action="carList.jsp">
+    <input  type="submit" value="Previous">
+</form>
+
 
 <div class="container">
+
+
+
 
 
     <div class="row">
@@ -101,9 +109,7 @@
     </div>
 </div>
 
-<form action="carList.jsp">
-    <input  type="submit" value="Previous">
-</form>
+
 
 
 </body>

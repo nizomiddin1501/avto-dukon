@@ -1,3 +1,13 @@
+<%@ page import="uz.developers.model.User" %>
+<%
+    User auth = (User) request.getSession().getAttribute("auth");
+    if (auth != null) {
+        request.setAttribute("auth", auth);
+    }
+
+%>
+
+
 <html>
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"

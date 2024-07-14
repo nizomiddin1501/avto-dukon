@@ -1,9 +1,14 @@
 <%@ page import="uz.developers.service.DbConnection" %>
 <%@ page import="java.util.List" %>
-<%@ page import="uz.developers.service.ModelService" %>
-<%@ page import="uz.developers.model.Model" %>
 <%@ page import="uz.developers.service.UserService" %>
 <%@ page import="uz.developers.model.User" %>
+<%
+    User auth = (User) request.getSession().getAttribute("auth");
+    if (auth != null) {
+        request.setAttribute("auth", auth);
+    }
+
+%>
 
 <html>
 <head>
@@ -11,6 +16,10 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+
+<form action="home.jsp">
+    <input  type="submit" value="Previous">
+</form>
 <div class="container">
     <div class="row">
         <div class="col-md-3">
@@ -57,8 +66,6 @@
 </div>
 
 
-<form action="home.jsp">
-    <input  type="submit" value="Previous">
-</form>
+
 </body>
 </html>

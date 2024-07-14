@@ -5,6 +5,14 @@
 <%@ page import="uz.developers.service.UserService" %>
 <%@ page import="uz.developers.model.User" %>
 <%
+    User auth = (User) request.getSession().getAttribute("auth");
+    if (auth != null) {
+        request.setAttribute("auth", auth);
+    }
+
+%>
+
+<%
     int clientId = Integer.parseInt(request.getParameter("id"));
     UserService userService = new UserService(DbConnection.getConnection());
     User userById = userService.getUserById(clientId);

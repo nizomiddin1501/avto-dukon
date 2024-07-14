@@ -35,6 +35,11 @@
 </head>
 <body>
 
+<form action="carList.jsp">
+    <input  type="submit" value="Previous">
+</form>
+
+
 
 <div class="container">
     <h2>Edit Car</h2>
@@ -60,9 +65,6 @@
 
 
 
-<form action="carList.jsp">
-    <input  type="submit" value="Previous">
-</form>
 
 
 </body>

@@ -100,10 +100,13 @@ public class Main {
                     System.out.println("Enter model id");
                     int model_id = scanner.nextInt();
 
-                    System.out.println("Enter member ind");
-                    int member_id = scanner.nextInt();
+//                    System.out.println("Enter brand id");
+//                    int brand_id = scanner.nextInt();
 
-                    Car car = new Car(title,description,year,price,model_id,member_id);
+                    System.out.println("Enter car photo");
+                    String photo = scanner.next();
+
+                    Car car = new Car(title,description,year,price,model_id,photo);
                     carService.addCar(car);
                     break;
                 }

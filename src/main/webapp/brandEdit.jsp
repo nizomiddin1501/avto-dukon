@@ -23,6 +23,11 @@
 </head>
 <body>
 
+<form action="brandList.jsp">
+    <input  type="submit" value="Previous">
+</form>
+
+
 <div class="container">
     <h2>Edit Model</h2>
     <form method="post">
@@ -102,9 +107,6 @@
 <%--    </div>--%>
 
 
-<form action="brandList.jsp">
-    <input  type="submit" value="Previous">
-</form>
 
 
 

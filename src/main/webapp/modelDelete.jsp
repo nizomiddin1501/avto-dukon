@@ -2,6 +2,15 @@
 <%@ page import="uz.developers.service.DbConnection" %>
 
 <%@ page import="uz.developers.service.ModelService" %>
+<%@ page import="uz.developers.model.User" %>
+<%
+    User auth = (User) request.getSession().getAttribute("auth");
+    if (auth != null) {
+        request.setAttribute("auth", auth);
+    }
+
+%>
+
 
 <%
     int id = Integer.parseInt(request.getParameter("id"));

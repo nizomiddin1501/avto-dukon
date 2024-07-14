@@ -19,6 +19,13 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        User auth = (User) req.getSession().getAttribute("auth");
+        if (auth != null) {
+            resp.sendRedirect("registration.jsp");
+        } else {
+            resp.sendRedirect("login.jsp");
+        }
+
 
     }
 

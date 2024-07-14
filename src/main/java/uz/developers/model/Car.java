@@ -42,13 +42,14 @@ public class Car {
         this.member_id = member_id;
     }
 
-    public Car(String title, String description, int year, int price, Integer model_id,Integer brand_id) {
+    public Car(String title, String description, int year, int price, Integer model_id,String photo) {
         this.title = title;
         this.description = description;
         this.year = year;
         this.price = price;
         this.model_id = model_id;
-        this.brand_id = brand_id;
+//        this.brand_id = brand_id;
+        this.photo = photo;
     }
 
     public String getPhoto() {

@@ -22,29 +22,29 @@ public class BrandServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-//        BrandService brandService = new BrandService(DbConnection.getConnection());
-//        List<Brand> brands = brandService.getAllBrands();
-//        req.setAttribute("brands",brands);
-//        req.getRequestDispatcher("brandList.jsp").forward(req,resp);
-//
-
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        String brandName = req.getParameter("brandName");
-
-        Brand brand = new Brand(brandName);
-        BrandService brandService = new BrandService(DbConnection.getConnection());
-        brandService.addBrand(brand);
-        resp.sendRedirect("brandList.jsp");
-        PrintWriter writer = resp.getWriter();
-        writer.println("Brand added successfully!!!");
-
-
-
+        User auth = (User) req.getSession().getAttribute("auth");
+        if (auth != null) {
+            resp.sendRedirect("brand.jsp");
+        } else {
+            resp.sendRedirect("login.jsp");
+        }
     }
 
 
-}
+        @Override
+        protected void doPost (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+            String brandName = req.getParameter("brandName");
+
+            Brand brand = new Brand(brandName);
+            BrandService brandService = new BrandService(DbConnection.getConnection());
+            brandService.addBrand(brand);
+            resp.sendRedirect("brandList.jsp");
+            PrintWriter writer = resp.getWriter();
+            writer.println("Brand added successfully!!!");
+
+
+        }
+
+
+    }

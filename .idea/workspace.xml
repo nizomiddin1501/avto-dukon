@@ -10,8 +10,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17c975d4-a70f-4159-ae05-86feec8daafd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cars/Tahoe.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uz/developers/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uz/developers/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uz/developers/controller/BrandServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uz/developers/controller/BrandServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uz/developers/controller/CarServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uz/developers/controller/CarServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uz/developers/controller/ModelServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uz/developers/controller/ModelServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uz/developers/controller/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uz/developers/controller/RegisterServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uz/developers/model/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uz/developers/model/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uz/developers/service/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uz/developers/service/CarService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jspf/slidebar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jspf/slidebar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/brand.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/brand.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/brandEdit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/brandEdit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/brandList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/brandList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/car.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/car.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/carEdit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/carEdit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/carList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/carList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/clientList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/clientList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/clientShow.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/clientShow.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/model.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/model.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/modelDelete.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/modelDelete.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/modelEdit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/modelEdit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/modelList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/modelList.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,18 +68,18 @@
     <option name="showVisibilityIcons" value="true" />
     <option name="sortByType" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/AllTask/IdeaProjects/A1_ReTakeJava/spring_modul_2/serius_projects/avto-dukon/src/main/webapp/images/cars",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/AllTask/IdeaProjects/A1_ReTakeJava/spring_modul_2/serius_projects/avto-dukon/src/main/webapp/images/cars&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="uz.developers.model" />
@@ -205,7 +226,10 @@
       <workItem from="1720633430822" duration="4410000" />
       <workItem from="1720674654501" duration="16362000" />
       <workItem from="1720763187254" duration="7414000" />
-      <workItem from="1720853844025" duration="28051000" />
+      <workItem from="1720853844025" duration="31007000" />
+      <workItem from="1720943701797" duration="180000" />
+      <workItem from="1720944390110" duration="176000" />
+      <workItem from="1720949484891" duration="7828000" />
     </task>
     <servers />
   </component>
@@ -218,12 +242,7 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/uz/developers/service/CarService.java</url>
           <line>82</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uz/developers/service/UserService.java</url>
-          <line>78</line>
-          <option name="timeStamp" value="26" />
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

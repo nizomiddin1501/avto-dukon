@@ -13,6 +13,11 @@
 </head>
 <body>
 
+<form action="home.jsp">
+    <input  type="submit" value="Previous">
+</form>
+
+
 <div class="container">
     <form action="/brand" method="post">
 
@@ -60,9 +65,6 @@
     </form>
 </div>
 
-<form action="home.jsp">
-    <input  type="submit" value="Previous">
-</form>
 
 
 </body>

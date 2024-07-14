@@ -2,6 +2,7 @@ package uz.developers.controller;
 
 import uz.developers.model.Brand;
 import uz.developers.model.Model;
+import uz.developers.model.User;
 import uz.developers.service.BrandService;
 import uz.developers.service.DbConnection;
 import uz.developers.service.ModelService;
@@ -17,16 +18,28 @@ import java.util.List;
 
 @WebServlet("/modelAdd")
 public class ModelServlet extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        User auth = (User) req.getSession().getAttribute("auth");
+        if (auth != null) {
+            resp.sendRedirect("model.jsp");
+        } else {
+            resp.sendRedirect("login.jsp");
+        }
 
-
-//    @Override
+        //    @Override
 //    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        ModelService modelService = new ModelService(DbConnection.getConnection());
 //        List<Model> models = modelService.getAllModelList();
 //        req.setAttribute("models", models);
 //        req.getRequestDispatcher("/modelList.jsp").forward(req, resp);
 //
-//    }
+
+
+    }
+
+
+
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
