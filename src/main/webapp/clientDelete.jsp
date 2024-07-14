@@ -1,8 +1,18 @@
 
 <%@ page import="uz.developers.service.DbConnection" %>
 <%@ page import="uz.developers.service.UserService" %>
+<%@ page import="uz.developers.model.User" %>
 
 <%
+//    User auth = (User) request.getSession().getAttribute("auth");
+//    if (auth != null) {
+//        request.setAttribute("auth", auth);
+//    } else {
+//        response.sendRedirect("login.jsp");
+//    }
+
+
+
     int id = Integer.parseInt(request.getParameter("id"));
     UserService userService = new UserService(DbConnection.getConnection());
     userService.deleteClient(id);

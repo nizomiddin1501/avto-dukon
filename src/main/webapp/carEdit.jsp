@@ -6,7 +6,8 @@
 <%@ page import="uz.developers.service.BrandService" %>
 <%@ page import="uz.developers.service.CarService" %>
 <%@ page import="uz.developers.model.Car" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="uz.developers.model.User" %><%--
   Created by IntelliJ IDEA.
   User: user
   Date: 7/9/2024
@@ -15,6 +16,14 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
+//    User auth = (User) request.getSession().getAttribute("auth");
+//    if (auth != null) {
+//        request.setAttribute("auth", auth);
+//    } else {
+//        response.sendRedirect("login.jsp");
+//    }
+
+
     int id = Integer.parseInt(request.getParameter("id"));
     CarService carService = new CarService(DbConnection.getConnection());
     Car car = carService.getCarById(id);

@@ -10,6 +10,14 @@ public class User {
     private String phone_number;
 
 
+    public User(Integer id, String firstname, String lastname, String photo, String phone_number) {
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.photo = photo;
+        this.phone_number = phone_number;
+    }
+
     public User(Integer id, String firstname, String lastname, String email, String password, String photo, String phone_number) {
         this.id = id;
         this.firstname = firstname;

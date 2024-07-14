@@ -4,11 +4,12 @@
 <%@ page import="uz.developers.service.ModelService" %>
 <%@ page import="uz.developers.model.User" %>
 <%
-    User auth = (User) request.getSession().getAttribute("auth");
-    if (auth != null) {
-        request.setAttribute("auth", auth);
-    }
-
+//    User auth = (User) request.getSession().getAttribute("auth");
+//    if (auth != null) {
+//        request.setAttribute("auth", auth);
+//    } else {
+//        response.sendRedirect("login.jsp");
+//    }
 %>
 
 

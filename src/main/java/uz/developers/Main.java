@@ -30,7 +30,8 @@ public class Main {
                     "5 => Brand List, " +
                     "6 => Model List, " +
                     "7 => Car List, " +
-                    "8 => Edit Model");
+                    "8 => Edit Model, " +
+                    "9 => Edit User");
             int i = scanner.nextInt();
             switch (i) {
                 case 0: {
@@ -142,6 +143,35 @@ public class Main {
                     Model model = new Model(id,name,brand_id);
 
                     modelService.updateModel(model);
+                    break;
+                }
+
+                case 9: {
+                    UserService userService = new UserService(DbConnection.getConnection());
+                    System.out.println("Enter user's id");
+                    int id = scanner.nextInt();
+//                    System.out.println(userService.getUserById(id));
+
+                    System.out.println("Enter firstname");
+                    String firstname = scanner.next();
+
+                    System.out.println("Enter lastname");
+                    String lastname= scanner.next();
+
+                    System.out.println("Enter email");
+                    String email= scanner.next();
+
+                    System.out.println("Enter password");
+                    String password= scanner.next();
+
+                    System.out.println("Enter photo");
+                    String photo= scanner.next();
+
+                    System.out.println("Enter phone number");
+                    String phone_number= scanner.next();
+                    User user = new User(id,firstname,lastname,email,password,photo,phone_number);
+
+                    System.out.println(userService.updateClient(user));
                     break;
                 }
 

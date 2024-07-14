@@ -27,13 +27,6 @@ public class ModelServlet extends HttpServlet {
             resp.sendRedirect("login.jsp");
         }
 
-        //    @Override
-//    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        ModelService modelService = new ModelService(DbConnection.getConnection());
-//        List<Model> models = modelService.getAllModelList();
-//        req.setAttribute("models", models);
-//        req.getRequestDispatcher("/modelList.jsp").forward(req, resp);
-//
 
 
     }

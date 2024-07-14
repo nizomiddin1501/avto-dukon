@@ -7,10 +7,12 @@
 <%@ page import="java.util.List" %>
 <%@ page import="uz.developers.model.User" %>
 <%
-    User auth = (User) request.getSession().getAttribute("auth");
-    if (auth != null) {
-        request.setAttribute("auth", auth);
-    }
+//    User auth = (User) request.getSession().getAttribute("auth");
+//    if (auth != null) {
+//        request.setAttribute("auth", auth);
+//    } else {
+//        response.sendRedirect("login.jsp");
+//    }
 
 %>
 

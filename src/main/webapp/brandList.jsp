@@ -6,6 +6,15 @@
 <%@ page import="java.sql.PreparedStatement" %>
 <%@ page import="java.sql.Connection" %>
 <%@ page import="java.sql.ResultSet" %>
+<%@ page import="uz.developers.model.User" %>
+<%
+//    User auth = (User) request.getSession().getAttribute("auth");
+//    if (auth != null) {
+//        request.setAttribute("auth", auth);
+//    } else {
+//        response.sendRedirect("login.jsp");
+//    }
+%>
 <html>
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"

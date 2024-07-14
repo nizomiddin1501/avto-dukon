@@ -75,6 +75,33 @@ public class UserService {
     }
 
 
+    public boolean updateClient(User user) {
+        boolean rowUpdated = false;
+        try {
+            String query = "update member set firstname = ?, lastname = ?, email = ?, password = ?, photo = ?, phone_number = ? where id = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, user.getFirstname());
+            preparedStatement.setString(2, user.getLastname());
+            preparedStatement.setString(3, user.getEmail());
+            preparedStatement.setString(4, user.getPassword());
+            preparedStatement.setString(5, user.getPhoto());
+            preparedStatement.setString(6, user.getPhone_number());
+            preparedStatement.setInt(7, user.getId());
+
+            rowUpdated = preparedStatement.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return rowUpdated;
+    }
+
+
+
+
+
+
+
+
     public List<User> getAllClientList() {
         List<User> userList = new ArrayList<>();
         try {
@@ -120,6 +147,7 @@ public class UserService {
         }
         return user;
     }
+
 
     public void deleteClient(int id) {
         try {

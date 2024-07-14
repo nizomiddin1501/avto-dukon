@@ -3,10 +3,12 @@
 <%@ page import="uz.developers.service.UserService" %>
 <%@ page import="uz.developers.model.User" %>
 <%
-    User auth = (User) request.getSession().getAttribute("auth");
-    if (auth != null) {
-        request.setAttribute("auth", auth);
-    }
+//    User auth = (User) request.getSession().getAttribute("auth");
+//    if (auth != null) {
+//        request.setAttribute("auth", auth);
+//    } else {
+//        response.sendRedirect("login.jsp");
+//    }
 
 %>
 
@@ -18,9 +20,10 @@
 <body>
 
 <form action="home.jsp">
-    <input  type="submit" value="Previous">
+    <input type="submit" value="Previous">
 </form>
 <div class="container">
+    <form action="/client" method="get">
     <div class="row">
         <div class="col-md-3">
         </div>
@@ -44,15 +47,19 @@
                     for (User user : userList) {
                 %>
                 <tr>
-                    <th><%=user.getId()%></th>
-                    <th><%=user.getFirstname()%></th>
-                    <th><%=user.getLastname()%></th>
+                    <th><%=user.getId()%>
+                    </th>
+                    <th><%=user.getFirstname()%>
+                    </th>
+                    <th><%=user.getLastname()%>
+                    </th>
                     <th><img src="<%= user.getPhoto() %>" alt="Client Photo" width="50" height="50"></th>
-                    <th><%=user.getPhone_number()%></th>
+                    <th><%=user.getPhone_number()%>
+                    </th>
 
                     <td>
                         <a href="clientShow.jsp?id=<%=user.getId()%>" class="btn btn-success">Show</a>
-                        <a href="clientEdit.jsp?id=<%=user.getId()%>" class="btn btn-warning">Edit</a>
+                        <a href="/clientEdit?id=<%=user.getId()%>" class="btn btn-warning">Edit</a>
                         <a href="clientDelete.jsp?id=<%=user.getId()%>" class="btn btn-danger"
                            onclick="return confirm('Are you sure you want to delete this client?');">Delete</a>
 
@@ -63,8 +70,8 @@
             </table>
         </div>
     </div>
+    </form>
 </div>
-
 
 
 </body>

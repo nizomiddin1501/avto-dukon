@@ -15,7 +15,7 @@
         <div class="col-md-9">
             <h2>Registration</h2>
             </hr>
-            <form action="/register" method="post">
+            <form action="/client" method="post">
 
                 <div class="form-group">
                     <label for="exampleInputFirstname">Firstname</label>

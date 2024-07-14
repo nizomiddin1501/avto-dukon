@@ -1,7 +1,18 @@
 <%@ page import="uz.developers.service.DbConnection" %>
 <%@ page import="uz.developers.service.CarService" %>
 <%@ page import="uz.developers.model.Car" %>
+<%@ page import="uz.developers.model.User" %>
 <%
+//    User auth = (User) request.getSession().getAttribute("auth");
+//    if (auth != null) {
+//        request.setAttribute("auth", auth);
+//    } else {
+//        response.sendRedirect("login.jsp");
+//    }
+
+
+
+
     int carId = Integer.parseInt(request.getParameter("id"));
     CarService carService = new CarService(DbConnection.getConnection());
     Car carById = carService.getCarById(carId);
