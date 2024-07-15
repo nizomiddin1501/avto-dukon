@@ -8,29 +8,38 @@
 <%@ page import="uz.developers.service.ModelService" %>
 <%@ page import="uz.developers.model.Model" %>
 <%@ page import="uz.developers.model.User" %>
+<%--<%--%>
+
+<%--//    User auth = (User) request.getSession().getAttribute("auth");--%>
+<%--//    if (auth != null) {--%>
+<%--//        request.setAttribute("auth", auth);--%>
+<%--//    } else {--%>
+<%--//        response.sendRedirect("login.jsp");--%>
+<%--//    }--%>
+
+
+
+<%--%>--%>
+
+<%--<%--%>
+<%--    int id = Integer.parseInt(request.getParameter("id"));--%>
+<%--    ModelService modelService = new ModelService(DbConnection.getConnection());--%>
+<%--    Model model = modelService.getModelById(id);--%>
+
+<%--    if (request.getMethod().equalsIgnoreCase("POST")) {--%>
+<%--        String name = request.getParameter("name");--%>
+<%--        model.setName(name);--%>
+<%--        modelService.updateModel(model);--%>
+<%--        response.sendRedirect("modelList.jsp");--%>
+<%--    }--%>
+<%--%>--%>
+
+
 <%
-
-//    User auth = (User) request.getSession().getAttribute("auth");
-//    if (auth != null) {
-//        request.setAttribute("auth", auth);
-//    } else {
-//        response.sendRedirect("login.jsp");
-//    }
-
-
-
-%>
-
-<%
-    int id = Integer.parseInt(request.getParameter("id"));
-    ModelService modelService = new ModelService(DbConnection.getConnection());
-    Model model = modelService.getModelById(id);
-
-    if (request.getMethod().equalsIgnoreCase("POST")) {
-        String name = request.getParameter("name");
-        model.setName(name);
-        modelService.updateModel(model);
-        response.sendRedirect("modelList.jsp");
+    Model model = (Model) request.getAttribute("user");
+    if (model == null) {
+        out.println("No model found for editing.");
+        return;
     }
 %>
 <html>
@@ -46,7 +55,8 @@
 
 <div class="container">
     <h2>Edit Model</h2>
-    <form method="post">
+    <form action="/modelEdit" method="post">
+        <input type="hidden" name="id" value="<%= model.getId() %>">
         <div class="form-group">
             <label for="name">Model Name</label>
             <input type="text" class="form-control" id="name" name="name" value="<%=model.getName()%>" required>
@@ -55,76 +65,8 @@
 
         <button type="submit" class="btn btn-primary">Save</button>
         <a href="modelList.jsp" class="btn btn-secondary">Cancel</a>
-    </form>
+        </form>
 </div>
-
-
-
-
-
-<%--<div class="container">--%>
-
-
-<%--    <%@include file="WEB-INF/jspf/header.jsp"%>--%>
-
-<%--    <div class="row">--%>
-<%--        <div class="col-md-3">--%>
-<%--            <%@include file="WEB-INF/jspf/slidebar.jsp"%>--%>
-<%--        </div>--%>
-
-<%--        <div class="col-md-9">--%>
-<%--            <h2>Registration</h2>--%>
-<%--            </hr>--%>
-<%--            <form action="/modelAdd" method="post">--%>
-
-<%--                <div class="form-group">--%>
-<%--                    <label for="exampleInputName">Brand</label>--%>
-<%--                    <select name="brand_id" class="form-control">--%>
-
-
-<%--                        <%--%>
-<%--                            Model model = new Model();--%>
-<%--                            ModelService modelService = new ModelService(DbConnection.getConnection());--%>
-<%--                            List<Model> model1 = modelService.getModel(model.getId());--%>
-<%--                            for (Model model2 : model1) {--%>
-<%--                        %>--%>
-
-<%--                        <%--%>
-<%--                            BrandService brandService = new BrandService(DbConnection.getConnection());--%>
-<%--                            List<Brand> allBrands = brandService.getAllBrands();--%>
-<%--                            for (Brand allBrand : allBrands) {--%>
-<%--                                String selection = "";--%>
-<%--                                if (allBrand.getId() == model2.getBrand_id()){--%>
-<%--                                    selection ="selected";--%>
-<%--                                }--%>
-<%--                        %>--%>
-<%--                        <option <%=selection%> value="<%=allBrand.getId()%>"><%=allBrand.getName()%></option>--%>
-<%--                        <%}%>--%>
-<%--                    </select>--%>
-<%--                </div>--%>
-
-<%--                <div class="form-group">--%>
-<%--                    <label for="exampleInputName">Model Name</label>--%>
-<%--                    <input type="text" class="form-control" name="name" id="exampleInputName" value="<%=model2.getName()%>"  placeholder="Enter Model Name">--%>
-<%--                </div>--%>
-
-<%--                <%}%>--%>
-
-<%--                <button type="submit" class="btn btn-primary">Save</button>--%>
-<%--            </form>--%>
-
-<%--&lt;%&ndash;            <img src="E:/persistent/asd.jpg" alt="">&ndash;%&gt;--%>
-
-
-<%--            </div>--%>
-
-
-<%--        </div>--%>
-<%--    </div>--%>
-
-
-
-
 
 
 </body>

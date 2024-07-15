@@ -32,10 +32,11 @@
                     <div class="container-fluid h-custom">
                         <div class="row d-flex justify-content-center align-items-center h-100">
                             <div class="col-md-9 col-lg-6 col-xl-5">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+<%--                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"--%>
+<%--                                     class="img-fluid" alt="Sample image">--%>
+                                <img src="images/cars/BMV.png"
                                      class="img-fluid" alt="Sample image">
-                                <%--                                <img src="https://yandex.com/images/search?img_url=https%3A%2F%2Fceles.club%2Fpictures%2Fuploads%2Fposts%2F2023-06%2F1687258619_celes-club-p-risunok-avtosalon-risunok-16.jpg&lr=10335&p=1&pos=0&rpt=simage&text=car%20shop%20images"--%>
-                                <%--                                     class="img-fluid" alt="Sample image">--%>
+
                             </div>
                             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
                                 <form>
@@ -68,7 +69,8 @@
                                     <div class="text-center text-lg-start mt-4 pt-2">
                                         <button type="submit" data-mdb-button-init data-mdb-ripple-init
                                                 class="btn btn-primary btn-lg"
-                                                style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+                                                style="padding-left: 2.5rem; padding-right: 2.5rem;">Login
+                                        </button>
                                         <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a
                                                 href="registration.jsp?id=" class="link-danger">Register</a></p>
                                     </div>

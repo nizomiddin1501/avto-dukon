@@ -15,19 +15,21 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/carAdd")
+@WebServlet("/car")
 public class CarServlet extends HttpServlet {
 
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        User auth = (User) req.getSession().getAttribute("auth");
-        if (auth != null) {
-            resp.sendRedirect("car.jsp");
-        } else {
-            resp.sendRedirect("login.jsp");
-        }
+//        User auth = (User) req.getSession().getAttribute("auth");
+//        if (auth != null) {
+//            resp.sendRedirect("car.jsp");
+//        } else {
+//            resp.sendRedirect("login.jsp");
+//        }
+        req.getRequestDispatcher("carList.jsp").forward(req, resp);
+
     }
 
 
@@ -35,9 +37,7 @@ public class CarServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-
-
+        CarService carService = new CarService(DbConnection.getConnection());
         String title = req.getParameter("title");
         String description = req.getParameter("description");
         int year = Integer.parseInt(req.getParameter("year"));
@@ -47,7 +47,7 @@ public class CarServlet extends HttpServlet {
         String photo = req.getParameter("photo");
         Car car = new Car(title,description,year,price,model_id,photo);
 
-        CarService carService = new CarService(DbConnection.getConnection());
+
         carService.addCar(car);
         resp.sendRedirect("carList.jsp");
         PrintWriter writer = resp.getWriter();

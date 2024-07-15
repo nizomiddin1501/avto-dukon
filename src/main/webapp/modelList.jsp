@@ -28,7 +28,7 @@
     <input  type="submit" value="Previous">
 </form>
 <div class="container">
-    <form action="/model" method="post">
+    <form action="/model" method="get">
     <div class="row">
         <div class="col-md-3">
         </div>
@@ -56,7 +56,7 @@
                     <th><%=model.getBrandName()%></th>
                     <td>
                         <a href="modelShow.jsp?id=<%=model.getId()%>" class="btn btn-success">Show</a>
-                        <a href="modelEdit.jsp?id=<%=model.getId()%>" class="btn btn-warning">Edit</a>
+                        <a href="/modelEdit?id=<%=model.getId()%>" class="btn btn-warning">Edit</a>
                         <a href="modelDelete.jsp?id=<%=model.getId()%>" class="btn btn-danger"
                            onclick="return confirm('Are you sure you want to delete this model?');">Delete</a>
 

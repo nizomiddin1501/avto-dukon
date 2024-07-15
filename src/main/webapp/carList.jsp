@@ -40,7 +40,7 @@
 
 
 <div class="container">
-    <form action="/car" method="post">
+    <form action="/car" method="get">
     <div class="row">
         <div class="col-md-9">
             <h2>Car List</h2>
@@ -75,7 +75,7 @@
                     <td>
 
                         <a href="carShow.jsp?id=<%=car.getId()%>" class="btn btn-success">Show</a>
-                        <a href="carEdit.jsp?id=<%=car.getId()%>" class="btn btn-light">Edit</a>
+                        <a href="/carEdit?id=<%=car.getId()%>" class="btn btn-light">Edit</a>
                         <a href="carDelete.jsp?id=<%=car.getId()%>" class="btn btn-danger"
                            onclick="return confirm('Are you sure you want to delete this car?');">Delete</a>
                         <a href="buy.jsp?id=<%=car.getId()%>" class="btn btn-primary">Buy</a>

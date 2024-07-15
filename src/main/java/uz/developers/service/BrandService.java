@@ -65,16 +65,18 @@ public class BrandService {
         }
     }
 
-    public void updateBrand(Brand brand) {
+    public boolean updateBrand(Brand brand) {
+        boolean rowUpdated = false;
         try {
             String updateQuery = "update brand set name=? where id=?";
             preparedStatement = this.connection.prepareStatement(updateQuery);
             preparedStatement.setString(1, brand.getName());
             preparedStatement.setInt(2, brand.getId());
-            preparedStatement.executeUpdate();
+            rowUpdated = preparedStatement.executeUpdate() > 0;
         } catch (SQLException e) {
             throw new RuntimeException("Error while updating brand", e);
         }
+        return rowUpdated;
     }
 
 
@@ -83,12 +85,12 @@ public class BrandService {
         try {
             String query = "select * from brand where id = ?;";
             preparedStatement = this.connection.prepareStatement(query);
-            preparedStatement.setInt(1,id);
+            preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
-                brandList.add(new Brand(id,name));
+                brandList.add(new Brand(id, name));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -127,8 +129,6 @@ public class BrandService {
             throw new RuntimeException("Error while deleting brand", e);
         }
     }
-
-
 
 
 }

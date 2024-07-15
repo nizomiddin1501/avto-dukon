@@ -25,6 +25,21 @@
 
 
     <title>Avto Dukon</title>
+    <style>
+        body {
+            background-image: url('images/avto-dukon/1567272-full.jpg'); /* Rasmingiz manzilini yozing */
+            background-size: cover; /* Rasmni ekranga to'liq moslashtirish */
+            background-position: center; /* Rasmni markazga joylashtirish */
+            background-repeat: no-repeat; /* Rasmni takrorlamaslik */
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            padding-top: 20%;
+        }
+    </style>
 
 </head>
 <body>
@@ -35,6 +50,9 @@
 
     <%@include file="WEB-INF/jspf/slidebar.jsp"%>
 </div>
+
+
+<%--<img src="images/avto-dukon/mere.jpg" alt="ook" height="500" width="800">--%>
 
 
 

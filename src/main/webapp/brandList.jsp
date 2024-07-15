@@ -28,7 +28,7 @@
 
 
 <div class="container">
-    <form action="/brand" method="post">
+    <form action="/brand" method="get">
 
     <div class="row">
         <div class="col-md-3">
@@ -56,7 +56,7 @@
                     <th><%=allBrand.getName()%></th>
                     <td>
                         <a href="brandShow.jsp?id=<%=allBrand.getId()%>" class="btn btn-success">Show</a>
-                        <a href="brandEdit.jsp?id=<%=allBrand.getId()%>" class="btn btn-warning">Edit</a>
+                        <a href="/brandEdit?id=<%=allBrand.getId()%>" class="btn btn-warning">Edit</a>
                         <a href="brandDelete.jsp?id=<%=allBrand.getId()%>" class="btn btn-danger"
                            onclick="return confirm('Are you sure you want to delete this brand?');">Delete</a>
                     </td>

@@ -6,8 +6,9 @@
 <%@ page import="uz.developers.model.Model" %>
 <%@ page import="java.util.List" %>
 
-<%@ page import="uz.developers.model.User" %><%
-//    User auth = (User) request.getSession().getAttribute("auth");
+<%@ page import="uz.developers.model.User" %>
+<%
+    //    User auth = (User) request.getSession().getAttribute("auth");
 //    if (auth != null) {
 //        request.setAttribute("auth", auth);
 //    } else {
@@ -23,24 +24,18 @@
 </head>
 <body>
 <form action="carList.jsp">
-    <input  type="submit" value="Previous">
+    <input type="submit" value="Previous">
 </form>
 
 
 <div class="container">
 
 
-
-
-
     <div class="row">
-        <div class="col-md-3">
-        </div>
-
         <div class="col-md-9">
             <h2>New Car</h2>
             </hr>
-            <form action="/carAdd" method="post">
+            <form action="/car" method="post">
 
                 <div class="form-group">
                     <label>Title</label>
@@ -76,23 +71,6 @@
                         <%}%>
                     </select>
                 </div>
-
-
-<%--                <div class="form-group">--%>
-<%--                    <label>Member</label>--%>
-<%--                    <select name="member_id" class="form-control">--%>
-<%--                        <%--%>
-<%--                            query = "select * from member";--%>
-<%--                            preparedStatement = connection.prepareStatement(query);--%>
-<%--                            resultSet = preparedStatement.executeQuery();--%>
-<%--                            while (resultSet.next()) {--%>
-<%--                        %>--%>
-<%--                        <option value="<%=resultSet.getInt("id")%>"><%=resultSet.getString("email")%>--%>
-<%--                        </option>--%>
-<%--                        <%}%>--%>
-<%--                    </select>--%>
-<%--                </div>--%>
-
                 <div class="form-group">
                     <label>Photo</label>
                     <input type="file" class="form-control" name="photo" placeholder="Photo">
@@ -102,16 +80,12 @@
                 <button type="submit" class="btn btn-primary">Save</button>
             </form>
 
-            <%--            <img src="E:/persistent/asd.jpg" alt="">--%>
-
 
         </div>
 
 
     </div>
 </div>
-
-
 
 
 </body>

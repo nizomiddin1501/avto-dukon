@@ -2,6 +2,7 @@ package uz.developers.service;
 
 import uz.developers.model.Brand;
 import uz.developers.model.Model;
+import uz.developers.model.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -40,6 +41,10 @@ public class ModelService {
         }
         return modelList;
     }
+
+
+
+
 
     public List<Model> getModels() {
         List<Model> models = new ArrayList<>();
@@ -85,17 +90,18 @@ public class ModelService {
         }
     }
 
-    public void updateModel(Model model) {
+    public boolean updateModel(Model model) {
+        boolean rowUpdated = false;
         try {
             String updateQuery = "update model set name=? where id=?";
             preparedStatement = this.connection.prepareStatement(updateQuery);
             preparedStatement.setString(1, model.getName());
-            //preparedStatement.setInt(2, model.getBrand_id());
             preparedStatement.setInt(2, model.getId());
-            preparedStatement.executeUpdate();
+            rowUpdated = preparedStatement.executeUpdate() > 0;
         } catch (SQLException e) {
             throw new RuntimeException("Error while updating model", e);
         }
+        return rowUpdated;
     }
 
     public List<Model> getModel(int modelId) {

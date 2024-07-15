@@ -79,7 +79,7 @@ public class UserService {
         boolean rowUpdated = false;
         try {
             String query = "update member set firstname = ?, lastname = ?, email = ?, password = ?, photo = ?, phone_number = ? where id = ?";
-            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            PreparedStatement preparedStatement = this.connection.prepareStatement(query);
             preparedStatement.setString(1, user.getFirstname());
             preparedStatement.setString(2, user.getLastname());
             preparedStatement.setString(3, user.getEmail());

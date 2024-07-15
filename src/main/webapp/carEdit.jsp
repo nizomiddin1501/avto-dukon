@@ -24,16 +24,25 @@
 //    }
 
 
-    int id = Integer.parseInt(request.getParameter("id"));
-    CarService carService = new CarService(DbConnection.getConnection());
-    Car car = carService.getCarById(id);
+//    int id = Integer.parseInt(request.getParameter("id"));
+//    CarService carService = new CarService(DbConnection.getConnection());
+//    Car car = carService.getCarById(id);
+//
+//    if (request.getMethod().equalsIgnoreCase("POST")) {
+//        int price = Integer.parseInt(request.getParameter("price"));
+//        car.setPrice(price);
+//        carService.updateCar(car);
+//        response.sendRedirect("carList.jsp");
+//    }
 
-    if (request.getMethod().equalsIgnoreCase("POST")) {
-        int price = Integer.parseInt(request.getParameter("price"));
-        car.setPrice(price);
-        carService.updateCar(car);
-        response.sendRedirect("carList.jsp");
+
+    Car car = (Car) request.getAttribute("user");
+    if (car == null) {
+        out.println("No model found for editing.");
+        return;
     }
+
+
 %>
 <html>
 <head>
@@ -52,7 +61,8 @@
 
 <div class="container">
     <h2>Edit Car</h2>
-    <form method="post">
+    <form action="/carEdit" method="post">
+        <input type="hidden" name="id" value="<%= car.getId() %>">
         <div class="form-group">
             <label for="name">Car Price</label>
             <input type="text" class="form-control" id="name" name="price" value="<%=car.getPrice()%>" required>

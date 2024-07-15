@@ -10,10 +10,10 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="home.jsp">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="/client">Clients</a></li>
-                <li class="nav-item"><a class="nav-link" href="/brandList.jsp">Brands</a></li>
-                <li class="nav-item"><a class="nav-link" href="/modelList.jsp">Models</a></li>
-                <li class="nav-item"><a class="nav-link" href="/carList.jsp">Cars</a></li>
-                <li class="nav-item"><a class="nav-link" href="/login.jsp">Log out</a></li>
+                <li class="nav-item"><a class="nav-link" href="/brand">Brands</a></li>
+                <li class="nav-item"><a class="nav-link" href="/model">Models</a></li>
+                <li class="nav-item"><a class="nav-link" href="/car">Cars</a></li>
+                <li class="nav-item"><a class="nav-link" href="/login">Log out</a></li>
 
 
         </div>

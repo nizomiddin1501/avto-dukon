@@ -7,7 +7,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="uz.developers.model.User" %>
 <%
-//    User auth = (User) request.getSession().getAttribute("auth");
+    //    User auth = (User) request.getSession().getAttribute("auth");
 //    if (auth != null) {
 //        request.setAttribute("auth", auth);
 //    } else {
@@ -24,56 +24,51 @@
 <body>
 
 <form action="modelList.jsp">
-    <input  type="submit" value="Previous">
+    <input type="submit" value="Previous">
 </form>
 
 
 <div class="container">
 
-
-    <div class="row">
-        <div class="col-md-3">
-        </div>
-
-        <div class="col-md-9">
-            <h2>New Model</h2>
-            </hr>
-            <form action="/modelAdd" method="post">
-
-                <div class="form-group">
-                    <label for="exampleInputName">Brand</label>
-                    <select name="brand_id" class="form-control">
-
-                        <%
-                            BrandService brandService = new BrandService(DbConnection.getConnection());
-                            List<Brand> allBrands = brandService.getAllBrands();
-                            for (Brand allBrand : allBrands) {
-                        %>
-                        <option value="<%=allBrand.getId()%>"><%=allBrand.getName()%></option>
-                        <%}%>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="exampleInputName">Model Name</label>
-                    <input type="text" class="form-control" name="name" id="exampleInputName"  placeholder="Enter Model Name">
-                </div>
-
-                <button type="submit" class="btn btn-primary">Save</button>
-            </form>
-
-<%--            <img src="E:/persistent/asd.jpg" alt="">--%>
+    <form action="/client" method="get">
 
 
+        <div class="row">
+            <div class="col-md-3">
             </div>
 
+            <div class="col-md-9">
+                <h2>New Model</h2>
+                </hr>
+                <form action="/modelAdd" method="post">
 
+                    <div class="form-group">
+                        <label for="exampleInputName">Brand</label>
+                        <select name="brand_id" class="form-control">
+
+                            <%
+                                BrandService brandService = new BrandService(DbConnection.getConnection());
+                                List<Brand> allBrands = brandService.getAllBrands();
+                                for (Brand allBrand : allBrands) {
+                            %>
+                            <option value="<%=allBrand.getId()%>"><%=allBrand.getName()%>
+                            </option>
+                            <%}%>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputName">Model Name</label>
+                        <input type="text" class="form-control" name="name" id="exampleInputName"
+                               placeholder="Enter Model Name">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+            </div>
         </div>
-    </div>
-
-
-
-
+    </form>
+</div>
 
 
 </body>

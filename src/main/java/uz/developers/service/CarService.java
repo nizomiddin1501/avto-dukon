@@ -101,16 +101,18 @@ public class CarService {
     }
 
 
-    public void updateCar(Car car) {
+    public boolean updateCar(Car car) {
+        boolean rowUpdated = false;
         try {
             String updateQuery = "update car set price=? where id=?";
             preparedStatement = this.connection.prepareStatement(updateQuery);
             preparedStatement.setInt(1, car.getPrice());
             preparedStatement.setInt(2, car.getId());
-            preparedStatement.executeUpdate();
+            rowUpdated = preparedStatement.executeUpdate() > 0;
         } catch (SQLException e) {
             throw new RuntimeException("Error while updating car", e);
         }
+        return rowUpdated;
     }
 
     public void deleteCar(int id) {
