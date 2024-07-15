@@ -1,4 +1,7 @@
-<h5>Contact Us</h5>
+<h5 style="text-align: center">CONTACT US</h5>
+<br>
+<br>
+<br>
 <ul class="list-group">
     <li class="list-goup-item">
         <a href="https://www.instagram.com/nizomiddin_mirzanazarov/">instagram</a>
@@ -12,4 +15,9 @@
         <a href="https://github.com/nizomiddin1501">gitHub</a>
     </li>
 </ul>
+
+
+
+
+
 

@@ -24,21 +24,6 @@
 
 
 
-<%--    <style>--%>
-<%--        body {--%>
-<%--            background-image: url('images/cars/Tahoe.png'); /* Ensure the image path is correct */--%>
-<%--            background-size: cover;--%>
-<%--            background-repeat: no-repeat;--%>
-<%--            background-attachment: fixed;--%>
-<%--            background-position: center;--%>
-<%--            height: 100vh;--%>
-<%--            margin: 0;--%>
-<%--            padding: 0;--%>
-<%--        }--%>
-<%--    </style>--%>
-
-
-
     <title>Avto Dukon</title>
 
 </head>
@@ -51,7 +36,7 @@
     <%@include file="WEB-INF/jspf/slidebar.jsp"%>
 </div>
 
-<%--<img src="images/cars/Tahoe.png" alt="OK">--%>
+
 
 
 
