@@ -1,6 +1,7 @@
 package uz.developers.service;
 
 import uz.developers.model.Brand;
+import uz.developers.model.Car;
 import uz.developers.model.Model;
 import uz.developers.model.User;
 
@@ -26,15 +27,16 @@ public class ModelService {
     public List<Model> getAllModelList() {
         List<Model> modelList = new ArrayList<>();
         try {
-            String query = "select model.id, model.name, brand.name as brand_name from model " +
+            String query = "select model.id, model.name, model.photo, brand.name as brandName from model " +
                     "inner join brand on brand.id = model.brand_id";
             preparedStatement = this.connection.prepareStatement(query);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
-                String brandName = resultSet.getString("brand_name");
-                modelList.add(new Model(id, name, brandName));
+                String photo = resultSet.getString("photo");
+                String brandName = resultSet.getString("brandName");
+                modelList.add(new Model(id, name, photo, brandName));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -55,7 +57,8 @@ public class ModelService {
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
-                models.add(new Model(id, name));
+                String photo = resultSet.getString("photo");
+                models.add(new Model(id, name,photo));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -93,10 +96,11 @@ public class ModelService {
     public boolean updateModel(Model model) {
         boolean rowUpdated = false;
         try {
-            String updateQuery = "update model set name=? where id=?";
+            String updateQuery = "update model set name=?, photo=? where id=?";
             preparedStatement = this.connection.prepareStatement(updateQuery);
             preparedStatement.setString(1, model.getName());
-            preparedStatement.setInt(2, model.getId());
+            preparedStatement.setString(2, model.getPhoto());
+            preparedStatement.setInt(3, model.getId());
             rowUpdated = preparedStatement.executeUpdate() > 0;
         } catch (SQLException e) {
             throw new RuntimeException("Error while updating model", e);
@@ -104,23 +108,23 @@ public class ModelService {
         return rowUpdated;
     }
 
-    public List<Model> getModel(int modelId) {
-        List<Model> models = new ArrayList<>();
-        try {
-            String query = "select * from model where id = ?;";
-            preparedStatement = this.connection.prepareStatement(query);
-            preparedStatement.setInt(1, modelId);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                int id = resultSet.getInt("id");
-                String name = resultSet.getString("name");
-                models.add(new Model(id, name));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return models;
-    }
+//    public List<Model> getModel(int modelId) {
+//        List<Model> models = new ArrayList<>();
+//        try {
+//            String query = "select * from model where id = ?;";
+//            preparedStatement = this.connection.prepareStatement(query);
+//            preparedStatement.setInt(1, modelId);
+//            ResultSet resultSet = preparedStatement.executeQuery();
+//            while (resultSet.next()) {
+//                int id = resultSet.getInt("id");
+//                String name = resultSet.getString("name");
+//                models.add(new Model(id, name));
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return models;
+//    }
 
 
     public Model getModelById(int modelId) {
@@ -133,13 +137,38 @@ public class ModelService {
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
-                model = new Model(id, name);
+                String photo = resultSet.getString("photo");
+                model = new Model(id, name,photo);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         return model;
     }
+
+
+    public Model showModelById(int modId) {
+        Model model = null;
+        try {
+            String query = "select model.id, model.name, model.photo, brand.name as brandName from model " +
+                    "inner join brand on brand.id = model.brand_id where model.id=?;";
+            preparedStatement = this.connection.prepareStatement(query);
+            preparedStatement.setInt(1,modId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String photo = resultSet.getString("photo");
+                String brandName = resultSet.getString("brandName");
+                model = new Model(id,name,photo,brandName);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return model;
+    }
+
+
 
 
 

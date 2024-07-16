@@ -17,13 +17,16 @@ import java.io.PrintWriter;
 public class LoginServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        User auth = (User) request.getSession().getAttribute("auth");
-        if (auth != null) {
-            response.sendRedirect("home.jsp");
-        } else {
-            response.sendRedirect("login.jsp");
-        }
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        User auth = (User) req.getSession().getAttribute("auth");
+//        if (auth != null) {
+//            resp.sendRedirect("home.jsp");
+//        } else {
+//            resp.sendRedirect("login.jsp");
+//        }
+        req.getRequestDispatcher("login.jsp").forward(req, resp);
+
+
     }
 
 

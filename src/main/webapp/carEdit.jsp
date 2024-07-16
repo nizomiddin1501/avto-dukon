@@ -36,7 +36,7 @@
 //    }
 
 
-    Car car = (Car) request.getAttribute("user");
+    Car car = (Car) request.getAttribute("car");
     if (car == null) {
         out.println("No model found for editing.");
         return;
@@ -70,7 +70,7 @@
 
 
         <button type="submit" class="btn btn-primary">Save</button>
-        <a href="modelList.jsp" class="btn btn-secondary">Cancel</a>
+        <a href="carList.jsp" class="btn btn-secondary">Cancel</a>
     </form>
 </div>
 

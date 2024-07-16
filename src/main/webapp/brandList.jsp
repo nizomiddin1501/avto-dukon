@@ -42,6 +42,7 @@
                 <tr>
                     <th scope="col">Id</th>
                     <th scope="col">Name</th>
+                    <th scope="col">Photo</th>
                     <th scope="col">Action</th>
                 </tr>
                 </thead>
@@ -54,10 +55,11 @@
                 <tr>
                     <th><%=allBrand.getId()%></th>
                     <th><%=allBrand.getName()%></th>
+                    <th><img src="<%= allBrand.getPhoto() %>" alt="Client Photo" width="50" height="50"></th>
                     <td>
-                        <a href="brandShow.jsp?id=<%=allBrand.getId()%>" class="btn btn-success">Show</a>
-                        <a href="/brandEdit?id=<%=allBrand.getId()%>" class="btn btn-warning">Edit</a>
-                        <a href="brandDelete.jsp?id=<%=allBrand.getId()%>" class="btn btn-danger"
+                        <a href="brandShow.jsp?id=<%=allBrand.getId()%>" class="btn btn-primary">Show</a>
+                        <a href="/brandEdit?id=<%=allBrand.getId()%>" class="btn btn-light">Edit</a>
+                        <a href="brandDelete.jsp?id=<%=allBrand.getId()%>" class="btn btn-dark"
                            onclick="return confirm('Are you sure you want to delete this brand?');">Delete</a>
                     </td>
                 </tr>

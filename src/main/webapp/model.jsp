@@ -31,19 +31,14 @@
 <div class="container">
 
     <form action="/client" method="get">
-
-
         <div class="row">
-            <div class="col-md-3">
-            </div>
-
             <div class="col-md-9">
                 <h2>New Model</h2>
                 </hr>
                 <form action="/modelAdd" method="post">
 
                     <div class="form-group">
-                        <label for="exampleInputName">Brand</label>
+                        <label for="exampleInputName">Name</label>
                         <select name="brand_id" class="form-control">
 
                             <%
@@ -59,8 +54,12 @@
 
                     <div class="form-group">
                         <label for="exampleInputName">Model Name</label>
-                        <input type="text" class="form-control" name="name" id="exampleInputName"
-                               placeholder="Enter Model Name">
+                        <input type="text" class="form-control" name="name" id="exampleInputName" placeholder="Enter Model Name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputPhoto">Model Photo</label>
+                        <input type="file" class="form-control" name="name" id="exampleInputPhoto" placeholder="Enter Model Photo">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Save</button>

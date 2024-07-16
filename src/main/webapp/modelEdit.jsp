@@ -36,7 +36,7 @@
 
 
 <%
-    Model model = (Model) request.getAttribute("user");
+    Model model = (Model) request.getAttribute("model");
     if (model == null) {
         out.println("No model found for editing.");
         return;
@@ -57,9 +57,15 @@
     <h2>Edit Model</h2>
     <form action="/modelEdit" method="post">
         <input type="hidden" name="id" value="<%= model.getId() %>">
+
         <div class="form-group">
             <label for="name">Model Name</label>
             <input type="text" class="form-control" id="name" name="name" value="<%=model.getName()%>" required>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Model Photo</label>
+            <input type="file" class="form-control" id="photo" name="photo" value="<%=model.getPhoto()%>" required>
         </div>
 
 

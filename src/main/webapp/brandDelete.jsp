@@ -19,7 +19,7 @@
     int id = Integer.parseInt(request.getParameter("id"));
     BrandService brandService = new BrandService(DbConnection.getConnection());
     brandService.deleteBrand(id);
-    response.sendRedirect("modelList.jsp");
+    response.sendRedirect("brandList.jsp");
 %>
 
 <html>

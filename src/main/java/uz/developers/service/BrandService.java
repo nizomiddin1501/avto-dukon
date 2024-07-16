@@ -31,7 +31,8 @@ public class BrandService {
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
-                brandList.add(new Brand(id, name));
+                String photo = resultSet.getString("photo");
+                brandList.add(new Brand(id, name,photo));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -68,10 +69,11 @@ public class BrandService {
     public boolean updateBrand(Brand brand) {
         boolean rowUpdated = false;
         try {
-            String updateQuery = "update brand set name=? where id=?";
+            String updateQuery = "update brand set name=?, photo=? where id=?";
             preparedStatement = this.connection.prepareStatement(updateQuery);
             preparedStatement.setString(1, brand.getName());
-            preparedStatement.setInt(2, brand.getId());
+            preparedStatement.setString(2, brand.getPhoto());
+            preparedStatement.setInt(3, brand.getId());
             rowUpdated = preparedStatement.executeUpdate() > 0;
         } catch (SQLException e) {
             throw new RuntimeException("Error while updating brand", e);
@@ -80,23 +82,46 @@ public class BrandService {
     }
 
 
-    public List<Brand> getBrand(int id) {  // this to edit brand
-        List<Brand> brandList = new ArrayList<>();
+//    public List<Brand> getBrand(int id) {  // this to edit brand
+//        List<Brand> brandList = new ArrayList<>();
+//        try {
+//            String query = "select * from brand where id = ?;";
+//            preparedStatement = this.connection.prepareStatement(query);
+//            preparedStatement.setInt(1, id);
+//            ResultSet resultSet = preparedStatement.executeQuery();
+//            while (resultSet.next()) {
+//                id = resultSet.getInt("id");
+//                String name = resultSet.getString("name");
+//                brandList.add(new Brand(id, name));
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return brandList;
+//    }
+
+
+    public Brand showBrandById(int brandId) {
+        Brand brand = null;
         try {
-            String query = "select * from brand where id = ?;";
+            String query = "select * from brand where id=?";
             preparedStatement = this.connection.prepareStatement(query);
-            preparedStatement.setInt(1, id);
+            preparedStatement.setInt(1,brandId);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                id = resultSet.getInt("id");
+                int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
-                brandList.add(new Brand(id, name));
+                String photo = resultSet.getString("photo");
+                brand = new Brand(id,name,photo);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return brandList;
+        return brand;
     }
+
+
+
 
 
     public Brand getBrandById(int brandId) {

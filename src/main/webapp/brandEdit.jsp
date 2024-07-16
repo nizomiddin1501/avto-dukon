@@ -26,7 +26,7 @@
 //        response.sendRedirect("brandList.jsp");
 //    }
 
-    Brand brand = (Brand) request.getAttribute("user");
+    Brand brand = (Brand) request.getAttribute("brand");
     if (brand == null) {
         out.println("No brand found for editing.");
         return;
@@ -56,6 +56,12 @@
             <label for="name">Brand Name</label>
             <input type="text" class="form-control" id="name" name="name" value="<%=brand.getName()%>" required>
         </div>
+
+            <div class="form-group">
+                <label for="name">Brand Photo</label>
+                <input type="file" class="form-control" id="photo" name="photo" value="<%=brand.getPhoto()%>" required>
+            </div>
+
         <button type="submit" class="btn btn-primary">Save</button>
         <a href="brandList.jsp" class="btn btn-secondary">Cancel</a>
     </form>

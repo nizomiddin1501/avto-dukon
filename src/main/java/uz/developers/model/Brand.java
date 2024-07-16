@@ -4,6 +4,7 @@ public class Brand {
 
     private Integer id;
     private String name;
+    private String photo;
 
 
     public Brand(Integer id, String name) {
@@ -11,11 +12,26 @@ public class Brand {
         this.name = name;
     }
 
-    public Brand(String name) {
+    public Brand(Integer id, String name, String photo) {
+        this.id = id;
         this.name = name;
+        this.photo = photo;
+    }
+
+    public Brand(String name,String photo) {
+        this.name = name;
+        this.photo = photo;
     }
 
     public Brand() {
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
     public Integer getId() {

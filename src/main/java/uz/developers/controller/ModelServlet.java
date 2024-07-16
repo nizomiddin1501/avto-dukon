@@ -37,8 +37,9 @@ public class ModelServlet extends HttpServlet {
 
         int brand_id = Integer.parseInt(req.getParameter("brand_id"));
         String name = req.getParameter("name");
+        String photo = req.getParameter("photo");
 
-        Model model = new Model(name,brand_id);
+        Model model = new Model(name,brand_id,photo);
         ModelService modelService = new ModelService(DbConnection.getConnection());
         modelService.addModel(model);
         resp.sendRedirect("modelList.jsp");

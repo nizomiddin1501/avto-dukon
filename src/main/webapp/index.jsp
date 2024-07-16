@@ -33,19 +33,21 @@
 <body>
 
 <div style="text-align: center" class="container">
-
-
     <%@include file="WEB-INF/jspf/header.jsp"%>
-
     <div class="row">
-
-
-
         <%@include file="WEB-INF/jspf/slidebar.jsp"%>
-
     </div>
-
 </div>
+
+
+
+
+
+
+
+
+
+
 
 
 </body>

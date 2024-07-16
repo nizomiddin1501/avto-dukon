@@ -8,6 +8,10 @@ public class Model {
     private String brandName;
     private Integer brand_id;
 
+    private String photo;
+
+    //private String[] photo;
+
 
     public Model(Integer id, String name, Integer brand_id) {
         this.id = id;
@@ -15,23 +19,42 @@ public class Model {
         this.brand_id = brand_id;
     }
 
-    public Model(String name, Integer brand_id) {
+    public Model(String name, Integer brand_id,String photo) {
         this.name = name;
         this.brand_id = brand_id;
+        this.photo = photo;
     }
 
     public Model() {
     }
 
-    public Model(Integer id, String name, String brandName) {
+//    public Model(Integer id, String name, String brandName) {
+//        this.id = id;
+//        this.name = name;
+//        this.brandName = brandName;
+//    }
+
+    public Model(Integer id, String name,  String photo, String brandName) {
         this.id = id;
         this.name = name;
+        this.photo = photo;
         this.brandName = brandName;
+
     }
 
-    public Model(Integer id, String name) {
+    public Model(Integer id, String name,String photo) {
         this.id = id;
         this.name = name;
+        this.photo = photo;
+    }
+
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
     public String getBrandName() {

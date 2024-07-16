@@ -33,9 +33,10 @@ public class ModelEditServlet extends HttpServlet {
         ModelService modelService = new ModelService(DbConnection.getConnection());
         int id = Integer.parseInt(req.getParameter("id"));
         String name = req.getParameter("name");
+        String photo = req.getParameter("photo");
 
 
-        Model model = new Model(id,name);
+        Model model = new Model(id,name,photo);
         modelService.updateModel(model);
         resp.sendRedirect("modelList.jsp");
     }

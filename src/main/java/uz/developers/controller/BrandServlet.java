@@ -37,8 +37,9 @@ public class BrandServlet extends HttpServlet {
         protected void doPost (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
             String brandName = req.getParameter("brandName");
+            String brandPhoto = req.getParameter("brandPhoto");
 
-            Brand brand = new Brand(brandName);
+            Brand brand = new Brand(brandName,brandPhoto);
             BrandService brandService = new BrandService(DbConnection.getConnection());
             brandService.addBrand(brand);
             resp.sendRedirect("brandList.jsp");

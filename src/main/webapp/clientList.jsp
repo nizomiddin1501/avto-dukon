@@ -65,20 +65,16 @@
                     for (User user : userList) {
                 %>
                 <tr>
-                    <th><%=user.getId()%>
-                    </th>
-                    <th><%=user.getFirstname()%>
-                    </th>
-                    <th><%=user.getLastname()%>
-                    </th>
+                    <th><%=user.getId()%></th>
+                    <th><%=user.getFirstname()%></th>
+                    <th><%=user.getLastname()%></th>
                     <th><img src="<%= user.getPhoto() %>" alt="Client Photo" width="50" height="50"></th>
-                    <th><%=user.getPhone_number()%>
-                    </th>
+                    <th><%=user.getPhone_number()%></th>
 
                     <td>
-                        <a href="clientShow.jsp?id=<%=user.getId()%>" class="btn btn-success">Show</a>
-                        <a href="/clientEdit?id=<%=user.getId()%>" class="btn btn-warning">Edit</a>
-                        <a href="clientDelete.jsp?id=<%=user.getId()%>" class="btn btn-danger"
+                        <a href="clientShow.jsp?id=<%=user.getId()%>" class="btn btn-primary">Show</a>
+                        <a href="/clientEdit?id=<%=user.getId()%>" class="btn btn-light">Edit</a>
+                        <a href="clientDelete.jsp?id=<%=user.getId()%>" class="btn btn-dark"
                            onclick="return confirm('Are you sure you want to delete this client?');">Delete</a>
 
                     </td>

@@ -25,7 +25,7 @@ public class BrandEditServlet extends HttpServlet {
             req.setAttribute("brand", existingBrand);
             req.getRequestDispatcher("brandEdit.jsp").forward(req, resp);
         } else {
-            resp.sendRedirect("BrandList.jsp");
+            resp.sendRedirect("brandList.jsp");
         }
     }
 
@@ -34,8 +34,9 @@ public class BrandEditServlet extends HttpServlet {
         BrandService brandService = new BrandService(DbConnection.getConnection());
         int id = Integer.parseInt(req.getParameter("id"));
         String name = req.getParameter("name");
+        String photo = req.getParameter("photo");
 
-        Brand brand = new Brand(id,name);
+        Brand brand = new Brand(id,name,photo);
         brandService.updateBrand(brand);
         resp.sendRedirect("brandList.jsp");
     }

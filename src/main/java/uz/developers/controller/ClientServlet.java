@@ -35,9 +35,6 @@ public class ClientServlet extends HttpServlet {
         PrintWriter writer = resp.getWriter();
         writer.println("Registration success!!!");
 
-
-
-
     }
 
 

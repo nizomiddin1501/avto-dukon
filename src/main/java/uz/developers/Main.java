@@ -31,7 +31,8 @@ public class Main {
                     "6 => Model List, " +
                     "7 => Car List, " +
                     "8 => Edit Model, " +
-                    "9 => Edit User");
+                    "9 => Edit User, " +
+                    "10 => Model by Id ");
             int i = scanner.nextInt();
             switch (i) {
                 case 0: {
@@ -66,7 +67,11 @@ public class Main {
                 case 2: {
                     System.out.println("Enter brand name");
                     String name = scanner.next();
-                    Brand brand = new Brand(name);
+
+                    System.out.println("Enter brand photo");
+                    String photo = scanner.next();
+
+                    Brand brand = new Brand(name,photo);
                     BrandService brandService = new BrandService(DbConnection.getConnection());
                     brandService.addBrand(brand);
                     break;
@@ -78,7 +83,11 @@ public class Main {
 
                     System.out.println("Enter brand id");
                     int brand_id = scanner.nextInt();
-                    Model model = new Model(name,brand_id);
+
+                    System.out.println("Enter model photo");
+                    String photo = scanner.next();
+
+                    Model model = new Model(name,brand_id,photo);
                     ModelService modelService = new ModelService(DbConnection.getConnection());
                     modelService.addModel(model);
                     break;
@@ -175,6 +184,13 @@ public class Main {
                     break;
                 }
 
+                case 10: {
+                    ModelService modelService = new ModelService(DbConnection.getConnection());
+                    System.out.println("Enter model id");
+                    int id = scanner.nextInt();
+                    System.out.println(modelService.showModelById(id));
+                    break;
+                }
 
 
 

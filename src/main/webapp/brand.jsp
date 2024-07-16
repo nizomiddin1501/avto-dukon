@@ -34,10 +34,14 @@
                 </hr>
 
                     <div class="form-group">
-                        <label for="exampleInputFirstname">Brand Name</label>
-                        <input type="text" class="form-control" name="brandName" id="exampleInputFirstname"
-                               placeholder="Enter Brand Name">
+                        <label for="exampleInputBrandName">Brand Name</label>
+                        <input type="text" class="form-control" name="brandName" id="exampleInputBrandName" placeholder="Enter Brand Name">
                     </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPhoto">Brand Photo</label>
+                    <input type="text" class="form-control" name="brandName" id="exampleInputPhoto" placeholder="Enter Brand Photo">
+                </div>
 
 
                     <button type="submit" class="btn btn-primary">Save</button>

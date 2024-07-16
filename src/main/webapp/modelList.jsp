@@ -40,6 +40,7 @@
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Model Name</th>
+                    <th scope="col">Model Photo</th>
                     <th scope="col">Brand Name</th>
                     <th scope="col">Action</th>
                 </tr>
@@ -53,11 +54,12 @@
                 <tr>
                     <th><%=model.getId()%></th>
                     <th><%=model.getName()%></th>
+                    <th><img src="<%= model.getPhoto() %>" alt="Client Photo" width="50" height="50"></th>
                     <th><%=model.getBrandName()%></th>
                     <td>
-                        <a href="modelShow.jsp?id=<%=model.getId()%>" class="btn btn-success">Show</a>
-                        <a href="/modelEdit?id=<%=model.getId()%>" class="btn btn-warning">Edit</a>
-                        <a href="modelDelete.jsp?id=<%=model.getId()%>" class="btn btn-danger"
+                        <a href="modelShow.jsp?id=<%=model.getId()%>" class="btn btn-primary">Show</a>
+                        <a href="/modelEdit?id=<%=model.getId()%>" class="btn btn-light">Edit</a>
+                        <a href="modelDelete.jsp?id=<%=model.getId()%>" class="btn btn-dark"
                            onclick="return confirm('Are you sure you want to delete this model?');">Delete</a>
 
                     </td>
