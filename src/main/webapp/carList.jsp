@@ -74,12 +74,10 @@
                     <th><%=car.getModelName()%></th>
                     <td>
 
-                        <a href="carShow.jsp?id=<%=car.getId()%>" class="btn btn-success">Show</a>
+                        <a href="carShow.jsp?id=<%=car.getId()%>" class="btn btn-primary">Show</a>
                         <a href="/carEdit?id=<%=car.getId()%>" class="btn btn-light">Edit</a>
-                        <a href="carDelete.jsp?id=<%=car.getId()%>" class="btn btn-danger"
+                        <a href="carDelete.jsp?id=<%=car.getId()%>" class="btn btn-dark"
                            onclick="return confirm('Are you sure you want to delete this car?');">Delete</a>
-                        <a href="buy.jsp?id=<%=car.getId()%>" class="btn btn-primary">Buy</a>
-
                     </td>
                 </tr>
                 <%}%>

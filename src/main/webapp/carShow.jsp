@@ -51,8 +51,10 @@
                                         </div>
 
                                         <div class="d-flex justify-content-center pt-1">
-                                            <a href="carList.jsp?id=<%=carById.getId()%>" class="btn btn-primary">Previous</a>
-                                            <a href="home.jsp?id=<%=carById.getId()%>" class="btn btn-light">Home</a>
+                                            <a href="buy.jsp?id=<%=carById.getId()%>" class="btn btn-primary">Buy</a>
+                                            <a href="carShow.jsp?id=<%=carById.getId()%>" class="btn btn-light">Next</a>
+                                            <a href="carList.jsp?id=<%=carById.getId()%>" class="btn btn-dark">Previous</a>
+
 <%--                                            <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-primary me-1 flex-grow-1">Chat</button>--%>
 <%--                                            <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary flex-grow-1">Follow</button>--%>
                                         </div>
