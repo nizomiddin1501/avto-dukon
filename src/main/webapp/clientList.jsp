@@ -37,6 +37,8 @@
 </head>
 <body>
 
+<%@include file="WEB-INF/jspf/navbar.jsp" %>
+
 <form action="home.jsp">
     <input type="submit" value="Previous">
 </form>

@@ -43,6 +43,8 @@
 </head>
 <body>
 
+<%@include file="WEB-INF/jspf/navbar.jsp" %>
+
 <form action="brandList.jsp">
     <input  type="submit" value="Previous">
 </form>

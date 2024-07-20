@@ -30,6 +30,8 @@
 </head>
 <body>
 
+<%@include file="WEB-INF/jspf/navbar.jsp" %>
+
 
             <section class="w-100 px-4 py-5" style="background-color: #9de2ff; border-radius: .5rem .5rem 0 0;">
                 <div class="row d-flex justify-content-center">
@@ -50,8 +52,9 @@
                                         </div>
 
                                         <div class="d-flex justify-content-center pt-1">
-                                            <a href="modelShow.jsp?id=<%=modelById.getId()%>" class="btn btn-primary">Next</a>
-                                            <a href="modelList.jsp?id=<%=modelById.getId()%>" class="btn btn-dark">Previous</a>
+                                            <a href="modelList.jsp?id=<%=modelById.getId()%>" class="btn btn-primary">Previous</a>
+                                            <a href="modelShow.jsp?id=<%=modelById.getId()%>" class="btn btn-dark">Next</a>
+
 
 <%--                                            <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-primary me-1 flex-grow-1">Chat</button>--%>
 <%--                                            <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary flex-grow-1">Follow</button>--%>

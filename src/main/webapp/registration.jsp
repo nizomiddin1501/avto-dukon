@@ -67,7 +67,7 @@
                                     </div>
 
                                     <div data-mdb-input-init class="form-outline mb-3">
-                                        <label class="form-label" for="exampleInputPhoto">Password</label>
+                                        <label class="form-label" for="exampleInputPhoto">Photo</label>
                                         <input type="file" class="form-control form-control-lg" name="photo"
                                                id="exampleInputPhoto" itemid="exampleInputPhoto"
                                                placeholder="Upload photo" required/>

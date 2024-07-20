@@ -23,6 +23,9 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+
+<%@include file="WEB-INF/jspf/navbar.jsp" %>
+
 <form action="carList.jsp">
     <input type="submit" value="Previous">
 </form>

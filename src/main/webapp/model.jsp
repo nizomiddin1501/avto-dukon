@@ -27,6 +27,7 @@
     <input type="submit" value="Previous">
 </form>
 
+<%@include file="WEB-INF/jspf/navbar.jsp" %>
 
 <div class="container">
 
@@ -40,7 +41,6 @@
                     <div class="form-group">
                         <label for="exampleInputName">Name</label>
                         <select name="brand_id" class="form-control">
-
                             <%
                                 BrandService brandService = new BrandService(DbConnection.getConnection());
                                 List<Brand> allBrands = brandService.getAllBrands();

@@ -32,7 +32,7 @@ public class CarEditServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         CarService carService = new CarService(DbConnection.getConnection());
         int id = Integer.parseInt(req.getParameter("id"));
-        int price = Integer.parseInt(req.getParameter("firstname"));
+        int price = Integer.parseInt(req.getParameter("price"));
 
 
         Car car = new Car(id,price);

@@ -49,9 +49,14 @@
 </head>
 <body>
 
+
+<%@include file="WEB-INF/jspf/navbar.jsp" %>
+
 <form action="modelList.jsp">
     <input  type="submit" value="Previous">
 </form>
+
+
 
 <div class="container">
     <h2>Edit Model</h2>

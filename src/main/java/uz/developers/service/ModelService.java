@@ -108,23 +108,7 @@ public class ModelService {
         return rowUpdated;
     }
 
-//    public List<Model> getModel(int modelId) {
-//        List<Model> models = new ArrayList<>();
-//        try {
-//            String query = "select * from model where id = ?;";
-//            preparedStatement = this.connection.prepareStatement(query);
-//            preparedStatement.setInt(1, modelId);
-//            ResultSet resultSet = preparedStatement.executeQuery();
-//            while (resultSet.next()) {
-//                int id = resultSet.getInt("id");
-//                String name = resultSet.getString("name");
-//                models.add(new Model(id, name));
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return models;
-//    }
+
 
 
     public Model getModelById(int modelId) {
