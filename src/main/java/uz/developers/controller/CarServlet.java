@@ -22,12 +22,12 @@ public class CarServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-//        User auth = (User) req.getSession().getAttribute("auth");
-//        if (auth != null) {
-//            resp.sendRedirect("car.jsp");
-//        } else {
-//            resp.sendRedirect("login.jsp");
-//        }
+        User auth = (User) req.getSession().getAttribute("auth");
+        if (auth != null) {
+            resp.sendRedirect("car.jsp");
+        } else {
+            resp.sendRedirect("login.jsp");
+        }
         req.getRequestDispatcher("carList.jsp").forward(req, resp);
 
     }
