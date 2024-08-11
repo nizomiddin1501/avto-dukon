@@ -10,10 +10,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17c975d4-a70f-4159-ae05-86feec8daafd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/uz/developers/controller/AccountServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uz/developers/controller/LogoutServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/account.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uz/developers/controller/BrandServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uz/developers/controller/BrandServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uz/developers/controller/CarServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uz/developers/controller/CarServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uz/developers/controller/ClientServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uz/developers/controller/ClientServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uz/developers/controller/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uz/developers/controller/LoginServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uz/developers/controller/ModelServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uz/developers/controller/ModelServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uz/developers/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uz/developers/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jspf/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jspf/navbar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,25 +59,25 @@
     <option name="showVisibilityIcons" value="true" />
     <option name="sortByType" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/AllTask/IdeaProjects/A1_ReTakeJava/spring_modul_2/serius_projects/avto-dukon/src/main/webapp/images/brand&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/AllTask/IdeaProjects/A1_ReTakeJava/spring_modul_2/serius_projects/avto-dukon/src/main/webapp",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="uz.developers.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\AllTask\IdeaProjects\A1_ReTakeJava\spring_modul_2\serius_projects\avto-dukon\src\main\webapp\images\brand" />
       <recent name="D:\AllTask\IdeaProjects\A1_ReTakeJava\spring_modul_2\serius_projects\avto-dukon\src\main\webapp" />
+      <recent name="D:\AllTask\IdeaProjects\A1_ReTakeJava\spring_modul_2\serius_projects\avto-dukon\src\main\webapp\images\brand" />
       <recent name="D:\AllTask\IdeaProjects\A1_ReTakeJava\spring_modul_2\serius_projects\avto-dukon\src\main\webapp\images\model" />
       <recent name="D:\AllTask\IdeaProjects\A1_ReTakeJava\spring_modul_2\serius_projects\avto-dukon\src\main\webapp\images" />
       <recent name="D:\AllTask\IdeaProjects\A1_ReTakeJava\spring_modul_2\serius_projects\avto-dukon\src\main\webapp\images\avto-dukon" />
@@ -221,7 +231,13 @@
       <workItem from="1721125641322" duration="15617000" />
       <workItem from="1721195672410" duration="15456000" />
       <workItem from="1721272072904" duration="2368000" />
-      <workItem from="1722283147556" duration="338000" />
+      <workItem from="1722283147556" duration="595000" />
+      <workItem from="1722314219421" duration="3661000" />
+      <workItem from="1722399916387" duration="2441000" />
+      <workItem from="1722501274170" duration="1259000" />
+      <workItem from="1722508744147" duration="1204000" />
+      <workItem from="1723264658819" duration="116000" />
+      <workItem from="1723279123011" duration="7474000" />
     </task>
     <servers />
   </component>

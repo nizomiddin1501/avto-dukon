@@ -7,10 +7,13 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-//    User auth = (User) request.getSession().getAttribute("auth");
-//    if (auth != null) {
-//        request.setAttribute("auth", auth);
-//    } else {
+
+//    HttpSession sessions = request.getSession(false);
+//    String authUser = null;
+//    if (sessions != null) {
+//        authUser = (String) sessions.getAttribute("auth");
+//    }
+//    if (authUser == null) {
 //        response.sendRedirect("login.jsp");
 //    }
 
