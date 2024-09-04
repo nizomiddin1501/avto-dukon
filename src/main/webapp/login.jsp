@@ -18,17 +18,11 @@
 <body>
 
 <div class="container">
-
-
     <div class="row">
-
         <div class="card-body">
-
             </hr>
             <form action="/login" method="post">
                 <h2>Login</h2>
-
-
                 <section class="vh-100">
                     <div class="container-fluid h-custom">
                         <div class="row d-flex justify-content-center align-items-center h-100">

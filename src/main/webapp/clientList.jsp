@@ -58,6 +58,7 @@
                     <th scope="col">Last Name</th>
                     <th scope="col">Photo</th>
                     <th scope="col">Phone Number</th>
+                    <th scope="col">Action</th>
                 </tr>
                 </thead>
                 <tbody>
